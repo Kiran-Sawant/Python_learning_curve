@@ -1,0 +1,19 @@
+*.ppm
+*.pyc
+*.vscode
+Database/Music Browser/.idea/dbnavigator.xml
+Database/Music Browser/.idea/misc.xml
+Database/Music Browser/.idea/modules.xml
+Database/Music Browser/.idea/Music Browser.iml
+Database/Music Browser/.idea/vcs.xml
+Database/Music Browser/.idea/inspectionProfiles/profiles_settings.xml
+Database/Music Browser/.idea/.gitignore
+Database/sqlite3/.idea/.gitignore
+Database/sqlite3/.idea/dbnavigator.xml
+Database/sqlite3/.idea/misc.xml
+Database/sqlite3/.idea/modules.xml
+Database/sqlite3/.idea/sqlite3.iml
+Database/sqlite3/.idea/vcs.xml
+Database/sqlite3/.idea/codeStyles/codeStyleConfig.xml
+Database/sqlite3/.idea/codeStyles/Project.xml
+Database/sqlite3/.idea/inspectionProfiles/profiles_settings.xml
