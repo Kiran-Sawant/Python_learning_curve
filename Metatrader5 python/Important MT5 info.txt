@@ -1,0 +1,77 @@
+mt5.terminal_info() data
+
+=========================================================================
+mt5.account_info() data
+
+login: 50060752
+trade_mode: 0		(0=Demo, 1=Contest, 2=Live)
+leverage: 100
+balance: 904.75
+credit: 0.0
+profit: 0.0
+equity: 904.75
+margin: 0.0
+margin_free: 904.75
+margin_level: 0.0
+margin_mode: 2		(0=retail netting, 1=exchange, 2=retail hedging)
+name: Sawant Kiran
+server: ICMarkets-Demo
+currency: USD
+
+========================================================================
+mt5.symbol_info('EURUSD') data
+
+swap_rollover3days: 3		(3=Wednesday)
+trade_contract_size: 100000.0
+swap_long: -9.02
+swap_short: 4.89
+margin_hedged: 0.0
+
+========================================================================
+mt5.symbols_get() data
+
+same as above
+
+
+========================================================================
+mt5.symbol_info_tick() data
+
+time: 1585756524
+bid: 1.09312
+ask: 1.09312
+
+
+========================================================================
+mt5.orders_get() data
+
+ticket: 44228712
+time_setup: 1585756692	(time of setup0
+time_done: 0		(Time @ which it was modified)
+time_expiration: 1585872000
+type: 2			(type of order: 2=Buy stop)
+state: 1			(state of order: 1=order is accepted)
+volume_initial: 0.01
+volume_current: 0.01
+price_open: 1.0
+sl: 0.99
+tp: 1.009
+symbol: AUDNZD
+comment: Fuck all Research
+
+
+====================================================================
+mt5.positions_get() data
+
+ticket: 44286507
+time: 1585771970		(time of fullfilling)
+type: 1			(type of order 1=sell order)
+reason: 0			(who triggered the order 0=desktop terminal)
+volume: 1.0		(volue as size of contracts)
+price_open: 50.82		(Price @ which the order is fullfilled)
+sl: 80.0			(Stop Loss)
+tp: 10.0			(take Profit)
+price_current: 51.26	(Current price of asset)
+swap: 0.0			(Swap that has been paid)
+profit: -0.44	       	(Profit @ time of calling)
+symbol: VIX_J0
+comment: experiment

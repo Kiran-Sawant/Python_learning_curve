@@ -1,0 +1,319 @@
+mt5.terminal_info() data
+
+community_account: True
+community_connection: True
+connected: True
+dlls_allowed: False
+trade_allowed: False
+tradeapi_disabled: False
+email_enabled: False
+ftp_enabled: False
+notifications_enabled: False
+mqid: False
+build: 2374
+maxbars: 100000
+codepage: 0
+ping_last: 207878
+community_balance: 0.0
+retransmission: 0.9126106194690266
+company: MetaQuotes Software Corp.
+name: MetaTrader 5
+language: English
+path: C:\Program Files\MetaTrader 5
+data_path: C:\Users\Tony_Stark\AppData\Roaming\MetaQuotes\Terminal\D0E8209F77C8CF37AD8BF550E51FF075
+commondata_path: C:\Users\Tony_Stark\AppData\Roaming\MetaQuotes\Terminal\Common
+
+====================================================================================================
+mt5.account_info() data
+
+login: 50060752
+trade_mode: 0
+leverage: 100
+limit_orders: 200
+margin_so_mode: 0
+trade_allowed: True
+trade_expert: True
+margin_mode: 2
+currency_digits: 2
+fifo_close: False
+balance: 904.75
+credit: 0.0
+profit: 0.0
+equity: 904.75
+margin: 0.0
+margin_free: 904.75
+margin_level: 0.0
+margin_so_call: 100.0
+margin_so_so: 50.0
+margin_initial: 0.0
+margin_maintenance: 0.0
+assets: 0.0
+liabilities: 0.0
+commission_blocked: 0.0
+name: Sawant Kiran
+server: ICMarkets-Demo
+currency: USD
+company: International Capital Markets Pty Ltd.
+
+============================================================================================
+mt5.symbol_info('EURUSD') data
+
+custom: False
+chart_mode: 0
+select: True
+visible: True
+session_deals: 0
+session_buy_orders: 0
+session_sell_orders: 0
+volume: 0
+volumehigh: 0
+volumelow: 0
+time: 1585756269
+digits: 5
+spread: 0
+spread_float: True
+ticks_bookdepth: 10
+trade_calc_mode: 0
+trade_mode: 4
+start_time: 0
+expiration_time: 0
+trade_stops_level: 0
+trade_freeze_level: 0
+trade_exemode: 2
+swap_mode: 1
+swap_rollover3days: 3
+margin_hedged_use_leg: False
+expiration_mode: 15
+filling_mode: 2
+order_mode: 127
+order_gtc_mode: 0
+option_mode: 0
+option_right: 0
+bid: 1.09316
+bidhigh: 1.10388
+bidlow: 1.09165
+ask: 1.09316
+askhigh: 1.10434
+asklow: 1.09167
+last: 0.0
+lasthigh: 0.0
+lastlow: 0.0
+volume_real: 0.0
+volumehigh_real: 0.0
+volumelow_real: 0.0
+option_strike: 0.0
+point: 1e-05
+trade_tick_value: 1.0
+trade_tick_value_profit: 1.0
+trade_tick_value_loss: 1.0
+trade_tick_size: 1e-05
+trade_contract_size: 100000.0
+trade_accrued_interest: 0.0
+trade_face_value: 0.0
+trade_liquidity_rate: 0.0
+volume_min: 0.01
+volume_max: 200.0
+volume_step: 0.01
+volume_limit: 0.0
+swap_long: -9.02
+swap_short: 4.89
+margin_initial: 100000.0
+margin_maintenance: 0.0
+session_volume: 0.0
+session_turnover: 0.0
+session_interest: 0.0
+session_buy_orders_volume: 0.0
+session_sell_orders_volume: 0.0
+session_open: 0.0
+session_close: 0.0
+session_aw: 0.0
+session_price_settlement: 0.0
+session_price_limit_min: 0.0
+session_price_limit_max: 0.0
+margin_hedged: 0.0
+price_change: 0.0
+price_volatility: 0.0
+price_theoretical: 0.0
+price_greeks_delta: 0.0
+price_greeks_theta: 0.0
+price_greeks_gamma: 0.0
+price_greeks_vega: 0.0
+price_greeks_rho: 0.0
+price_greeks_omega: 0.0
+price_sensitivity: 0.0
+basis: 
+category: 
+currency_base: EUR
+currency_profit: USD
+currency_margin: EUR
+bank: 
+description: Euro vs US Dollar
+exchange: 
+formula: 
+isin: 
+name: EURUSD
+page: 
+path: Forex\Majors\EURUSD
+
+=========================================================================================
+mt5.symbols_get() data
+
+custom: False
+chart_mode: 0
+select: True
+visible: True
+session_deals: 0
+session_buy_orders: 0
+session_sell_orders: 0
+volume: 0
+volumehigh: 0
+volumelow: 0
+time: 1585756404
+digits: 5
+spread: 0
+spread_float: True
+ticks_bookdepth: 10
+trade_calc_mode: 0
+trade_mode: 4
+start_time: 0
+expiration_time: 0
+trade_stops_level: 0
+trade_freeze_level: 0
+trade_exemode: 2
+swap_mode: 1
+swap_rollover3days: 3
+margin_hedged_use_leg: False
+expiration_mode: 15
+filling_mode: 2
+order_mode: 127
+order_gtc_mode: 0
+option_mode: 0
+option_right: 0
+bid: 1.09334
+bidhigh: 1.10388
+bidlow: 1.09165
+ask: 1.09334
+askhigh: 1.10434
+asklow: 1.09167
+last: 0.0
+lasthigh: 0.0
+lastlow: 0.0
+volume_real: 0.0
+volumehigh_real: 0.0
+volumelow_real: 0.0
+option_strike: 0.0
+point: 1e-05
+trade_tick_value: 1.0
+trade_tick_value_profit: 1.0
+trade_tick_value_loss: 1.0
+trade_tick_size: 1e-05
+trade_contract_size: 100000.0
+trade_accrued_interest: 0.0
+trade_face_value: 0.0
+trade_liquidity_rate: 0.0
+volume_min: 0.01
+volume_max: 200.0
+volume_step: 0.01
+volume_limit: 0.0
+swap_long: -9.02
+swap_short: 4.89
+margin_initial: 100000.0
+margin_maintenance: 0.0
+session_volume: 0.0
+session_turnover: 0.0
+session_interest: 0.0
+session_buy_orders_volume: 0.0
+session_sell_orders_volume: 0.0
+session_open: 0.0
+session_close: 0.0
+session_aw: 0.0
+session_price_settlement: 0.0
+session_price_limit_min: 0.0
+session_price_limit_max: 0.0
+margin_hedged: 0.0
+price_change: 0.0
+price_volatility: 0.0
+price_theoretical: 0.0
+price_greeks_delta: 0.0
+price_greeks_theta: 0.0
+price_greeks_gamma: 0.0
+price_greeks_vega: 0.0
+price_greeks_rho: 0.0
+price_greeks_omega: 0.0
+price_sensitivity: 0.0
+basis: 
+category: 
+currency_base: EUR
+currency_profit: USD
+currency_margin: EUR
+bank: 
+description: Euro vs US Dollar
+exchange: 
+formula: 
+isin: 
+name: EURUSD
+page: 
+path: Forex\Majors\EURUSD
+
+===============================================================================
+mt5.symbol_info_tick() data
+
+time: 1585756524
+bid: 1.09312
+ask: 1.09312
+last: 0.0
+volume: 0
+time_msc: 1585756524432
+flags: 2
+volume_real: 0.0
+
+================================================================================
+mt5.orders_get() data
+
+ticket: 44228712
+time_setup: 1585756692
+time_setup_msc: 1585756692035
+time_done: 0
+time_done_msc: 0
+time_expiration: 1585872000
+type: 2
+type_time: 3
+type_filling: 2
+state: 1
+magic: 0
+position_id: 0
+position_by_id: 0
+reason: 0
+volume_initial: 0.01
+volume_current: 0.01
+price_open: 1.0
+sl: 0.99
+tp: 1.009
+price_current: 1.02619
+price_stoplimit: 0.0
+symbol: AUDNZD
+comment: Fuck all Research
+external_id: 
+
+================================================================================
+mt5.positions_get() data
+
+ticket: 44286507
+time: 1585771970
+time_msc: 1585771970282
+time_update: 1585771970
+time_update_msc: 1585771970282
+type: 1
+magic: 0
+identifier: 44286507
+reason: 0
+volume: 1.0
+price_open: 50.82
+sl: 80.0
+tp: 10.0
+price_current: 51.26
+swap: 0.0
+profit: -0.44       (Profit @ time of calling)
+symbol: VIX_J0
+comment: experiment
+external_id: 
