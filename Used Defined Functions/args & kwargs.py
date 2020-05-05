@@ -6,6 +6,7 @@ values to a single kwarg. kwargs have a default value if a kwarg is not mentione
 
 def centre_text(*args, sep=' ', end='\n', file=None, flush=False):      #accepting multiple arguments for a single parameter args
                                                                         #sep, end, file, flush are keyword arguments with their default values
+    print(args)                                                         #args is passed as tuple '*' denotes unpacking a tuple
     text = ''
     for arg in args:
         text += str(arg) + sep
