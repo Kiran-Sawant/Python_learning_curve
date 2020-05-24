@@ -12,9 +12,9 @@ mainWindow.columnconfigure(2, weight=1) #if all columns have equal weight extra 
 
 #______________Creating widgets_______________#
 label = tk.Label(mainWindow, text='Hello Ugly World')
-leftFrame = tk.Frame(mainWindow, bg='black', borderwidth=2)
+leftFrame = tk.Frame(mainWindow)
 canvas = tk.Canvas(leftFrame, relief='raised', borderwidth=2, bg='green')
-rightFrame = tk.Frame(mainWindow, bg='grey', borderwidth=2)
+rightFrame = tk.Frame(mainWindow)
 button1 = tk.Button(rightFrame, text='button1', relief='raised')
 button2 = tk.Button(rightFrame, text='button2', relief='flat')
 button3 = tk.Button(rightFrame, text='button3', relief='groove')
@@ -29,8 +29,8 @@ button2.grid(row=1, column=0)
 button3.grid(row=2, column=0)
 
 #_________.config() method_________#
-leftFrame.config(relief='sunken')   #.config() lets set the parameters after the widget is created
-rightFrame.config(relief='sunken')
+leftFrame.config(relief='sunken', bg='black', borderwidth=2)   #.config() lets set the parameters after the widget is created
+rightFrame.config(relief='sunken', bg='grey', borderwidth=2)
 leftFrame.grid(sticky='ns')
 rightFrame.grid(sticky='new')
 
