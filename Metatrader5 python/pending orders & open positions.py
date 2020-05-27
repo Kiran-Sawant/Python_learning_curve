@@ -4,17 +4,27 @@ import pytz
 
 #____________Initializing Metatrader5____________#
 mt5.initialize()
-print(mt5.version(), '\n')
-print(mt5.terminal_info(), '\n')
-print(mt5.account_info(), '\n')
+print(f"Module Author: {mt5.__author__}")
+print(f"MetaTrader5 module version: {mt5.__version__}")
+print(f"MT5 Terminal Build: {mt5.terminal_info().build}")
 
 
 #__________Pending Order operations_____________#
-orders = mt5.orders_total()#changed                        #returns total number of pending orders
-print('no of pending orders: {0}'.format(orders))
+no_of_orders = mt5.orders_total()#changed                        #returns total number of pending orders
+print('no of pending orders: {0}'.format(no_of_orders))
 
-order = mt5.orders_get()                            #returns information of passed pending order, returns all if nothing passed
+order = mt5.orders_get()                                         #returns information of passed pending order, returns all if nothing passed
 print('\nOrder info: {0}'.format(order))
+
+#_______Making and viewing an orders dictionary_______#
+if order == None:
+    print(f"No Orders, error code={mt5.last_error()}")
+else:
+    for i in range(len(order)):
+        k = order[i]._asdict()                                   #._asdict() works with named tuple and not a tuple.
+        print('\n')
+        for j in k:
+            print(f"{j}: {k[j]}")
 
 
 #____________Calculating required Margin_________________#
@@ -39,5 +49,12 @@ one can pass name of the asset to show all open psitions on that asset
 one can pass a ticket of a trade to see the status of that trade
 If nothing is passed, it returns info of all the open positions in MT5"""
 
-for i in position:
-    print('\n', i)
+#________Printing all the values of a position as a dictionary___________#
+if position == None:
+    print(f"No positions, error code={mt5.last_error()}")
+else:
+    for i in range(len(position)):
+        k = position[i]._asdict()               #._asdict() works with named tuple and not a tuple.
+        print('\n')                             #for a tuple of named tuple apply it on single elements of the tuple.
+        for j in k:
+            print(f"{j}: {k[j]}")
