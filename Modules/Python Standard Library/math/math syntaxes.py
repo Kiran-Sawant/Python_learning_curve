@@ -38,7 +38,7 @@ print(f"gcd(12, 6): {math.gcd(12, 6)}")
 # math.remainder(x, y) returns a value k that makes x completely divisible by y
 print(f"remainder(67, 7): {math.remainder(67, 7)}\n")
 
-#______________Permutaions & Combinations_______________#       Requires Python 3.8
+#______________Permutations & Combinations_______________#       Requires Python 3.8
 
 # math.perm(n, k) returns the number of ways to choose k items from n items with order and without repetition.
 # print(f"{math.perm(len(range(1,101)), 20)}")
@@ -67,7 +67,7 @@ print(f"radians(180): {math.radians(180)}")
 # print(f"dist(3, 4): {math.dist(3, 4)}")
 
 # math.hypot(p, b) Find the hypotenuse of a right-angled triangle with perpendicular and base
-print(f"hypot(10, 5): {math.hypot(10, 5)}")
+print(f"hypot(10, 5): {math.hypot(10, 5)}\n")
 
 #_____________Trigonometric Operations_________________#
 
