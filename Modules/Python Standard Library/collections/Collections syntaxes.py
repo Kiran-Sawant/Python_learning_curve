@@ -136,4 +136,4 @@ for word in ['red', 'blue', 'red', 'green', 'blue', 'blue', 'orange']:
 """ Return a list of the n most common elements and their
     counts from the most common to the least."""
 
-print(cnt.most_common(2))           # gives 2 most occuring values in the list.
+print(cnt.most_common(2))           # gives 2 most commonly occuring values in the list.
