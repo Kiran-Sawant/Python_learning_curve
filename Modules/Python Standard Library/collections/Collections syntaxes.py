@@ -126,6 +126,7 @@ deck.rotate(2)
 print(deck)
 
 #___________________Counter Objects_____________________#
+""" Gives a tally of all the elements in an iterable"""
 
 cnt = col.Counter()
 
