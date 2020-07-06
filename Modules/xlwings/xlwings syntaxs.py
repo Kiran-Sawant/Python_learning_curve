@@ -4,11 +4,11 @@ import time
 
 #_____________creating a new Excel workbook_____________#
 
-# wb = xw.Book()              #Creates a new workbook
-# wb.save('experiment.xlsx')  #saves created workbook in the given path
+wb = xw.Book()              #Creates a new workbook
+wb.save('experiment.xlsx')  #saves created workbook in the given path
 
 wbExp = xw.Book('experiment2.xlsx') #opening an existing Excel file
-# wbBond = wbExp.sheets.add('Bonds', before='Equity', after='Forex') #creates a new worksheet in the spreadsheet
+wbBond = wbExp.sheets.add('Bonds', before='Equity', after='Forex') #creates a new worksheet in the spreadsheet
 print(wbExp.sheets[2].name)         #prints the name of 3rd worksheet
 
 #__________________Working with sheets___________________#
