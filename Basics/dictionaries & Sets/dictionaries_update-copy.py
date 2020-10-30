@@ -21,3 +21,7 @@ print(fruit)
 mix = fruit.copy() #copies fruit in a new veriable
 mix.update(veg)
 print(mix)
+
+# removes the passed key-value pair of passed key
+fruit.pop('orange')
+print(fruit)
