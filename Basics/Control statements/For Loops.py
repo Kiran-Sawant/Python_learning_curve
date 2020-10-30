@@ -25,7 +25,7 @@ for i in range(1, 11):
         print("{0} times {1:2} is {2:3}".format(i, j, i * j))
     print("="*20)
 
-print("="*50 + "\nBreak function") #_________Continue & Break Function____________#
+print("="*50 + "Continue function\n") #_________Continue & Break Function____________#
 
 shopping_list = ["milk", "pasta", "eggs", "spam", "bread", "rice"]
 nasty = ""
@@ -33,15 +33,15 @@ nasty = ""
 for item in shopping_list:
     if item == "spam":
         print("Fuck {}!".format(item))
-        continue #continue bypasses the code block ahead in the loop and goes back to the loop for enw value
+        continue #continue bypasses the code block ahead in the loop and goes back to the loop for new value
     print("buy {}".format(item))
 
-print("="*20) #separator
+print("="*20, 'Break function') #separator
 
 for item in shopping_list:
     if item == "spam":
         nasty = item
-        break # break terminates the loop it is in
+        break # break terminates the loop entirely
     print("I'll have a plate of {}, then, place".format(item))
 print("Can I have anything without {} in it".format(nasty))
 
