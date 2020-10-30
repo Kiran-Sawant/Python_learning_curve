@@ -1,4 +1,7 @@
-farm_animals = {"sheep", "cow", "hen"} #set literal
+"""A set object in python is an iterable set of unique objects
+similar to mathematical sets."""
+
+farm_animals = {"sheep", "cow", "hen"} # set literal
 print(farm_animals)
 
 for animals in farm_animals:
@@ -9,20 +12,20 @@ print("=" * 40) #________________#set() constructor method______________________
 wild_animals = set(["Lion", "tiger", "panter", "elephant", "hare"]) #set() constructor converts passed iterable into a set
 print(wild_animals)
 
-farm_animals.add("horse") #adding a value to the set
-wild_animals.add("horse") #adding a value to the set
-wild_animals.remove('hare') #removing a value, Key error if not present
+farm_animals.add("horse")                       # adding a value to the set
+wild_animals.add("horse")                       # adding a value to the set
+wild_animals.remove('hare')                     # removing a value, Key error if not present
 print(farm_animals, "\n", wild_animals)
 
-empty_set = set() #for creating an empty set use set() constructor only
+empty_set = set()                               # for creating an empty set use set() constructor only
 
 print("=" * 40 + "\nUnion() method:-") #______________union() method_________________#
 
-even = set(range(0, 40, 2)) #passing a range in a set
+even = set(range(0, 40, 2))                     #passing a range in a set
 print("Even = ", even)
 
 square = (4, 6, 9, 16, 25) #tuple
-square_set = set(square) #passing a tuple in a set() costructor
+square_set = set(square)                        #passing a tuple in a set() costructor
 print("Square set = ", square_set)
 
 print("Even.union(square set) = ", even.union(square_set)) #.union() method carries an arithmetic union operation on the sets
