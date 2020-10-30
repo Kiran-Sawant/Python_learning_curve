@@ -19,15 +19,17 @@ num_sort = sorted(num)                # sorted() function is used to create a ne
 print(f'sorted_num: {num_sort}')
 
 num.sort()                            # list.sort() method modifies the original list in memory.
-print(f'num.sort(): {num}')
+print(f'num.sort(): {num}\n')
+
 #_____________list() constructer_________#
 k = list(range(1, 50, 2)) #list() constructor creates a list with the given parameters & assigns it to the variable
-print(k)
+print(k, '\n')
 
 #_____________Nested list Operations___________#
-
 car2 = ['Lamborghini', 'Saab', 'MG']
 car3 = ['Dodge', 'Chevrolet', 'Ford']
 car2.append(car3) #appending car3 to car2
 car.append(car2)  #appending car2 to car
-print(car[6][3][2]) #retriving values inside a list in a list
+
+print(f"car list: {car}")
+print(car[5][3][2]) #retriving values inside a list in a list
