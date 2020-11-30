@@ -2,9 +2,9 @@ import pytz
 import datetime
 
 #_________creating a pytz() timezone object________#
-country = 'Europe/Moscow' #creating a string to pass in .timezone()
-tZone = pytz.timezone(country) #creating a timezone object
-localTime = datetime.datetime.now(tZone) #getting the local time of the timezon passed in .now()
+country = 'Europe/Moscow'                # creating a string to pass in .timezone()
+tZone = pytz.timezone(country)           # creating a timezone object
+localTime = datetime.datetime.now(tZone) # getting the local time of the timezon passed in .now()
 
 print("The time in {0} is {1}".format(country, localTime))
 print("UTC is {}\n".format(datetime.datetime.utcnow()))
@@ -28,13 +28,13 @@ print("UTC is {}\n".format(datetime.datetime.utcnow()))
 
 #_______aware & unaware datetime()________#
 
-local_Time =datetime.datetime.now()
-UTCtime =datetime.datetime.utcnow()
+local_Time = datetime.datetime.now()
+UTCtime = datetime.datetime.utcnow()
 
 print("Naive local time is {}".format(local_Time))
 print("Naive UTC time is {}".format(UTCtime))
 
-awareUTCtime = pytz.utc.localize(UTCtime) #localize() is used to convert an unaware datetime() to an aware
+awareUTCtime = pytz.utc.localize(UTCtime) # .localize() is used to convert an unaware datetime() to an aware
                                           #datetime()
 awareLocalTime = pytz.utc.localize(UTCtime).astimezone() # .astimezone() takes timezone object & gives an aware
                                                          #datetime object for that timezone w.r.t the passed
