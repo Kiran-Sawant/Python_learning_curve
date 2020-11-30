@@ -14,12 +14,12 @@ for char in string: #a for loop implicitly uses iter
 #______max()_______#
 """Returns the maximum value in an iterable."""
 
-print(f"Max of string: {max(string)}")
+print(f"\nMax of string: {max(string)}")
 
 #______min()_______#
 """Returns the minimum value in an iterable."""
 
-print(f"Min of string: {min(string)}")
+print(f"\nMin of string: {min(string)}\n")
 
 #______reversed()______#
 """Returns the passed iterable in reversed order."""
