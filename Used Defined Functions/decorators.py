@@ -21,7 +21,7 @@ class decorator_class():
 def display():
     print("Display function ran")
 
-# display = decorator_func(display)     #This is same as line 10~11
+# display = decorator_func(display)     #This is same as line 20~21
 
 @decorator_func
 def display_info(name, age):
@@ -39,5 +39,4 @@ def display_info2(name, age):
     print('display_info2 ran with arguments ({0}, {1})'.format(name, age))
 
 
-display_info2('Bob', 24)
-display2()
+display_info2('Ken', 21)
