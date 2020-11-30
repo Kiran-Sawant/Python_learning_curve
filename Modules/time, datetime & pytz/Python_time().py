@@ -25,7 +25,8 @@ print(strp)
 info = time.get_clock_info('process_time') #gives information about a perticular type of clock
 print(info)
 
-print("The timezone on the system is {0} with an offset of {1}".format(time.tzname, time.timezone)) #.tzname gives the timezone name & .timezone gives the offset from UTC
+#.tzname gives the system timezone name & .timezone gives the offset from UTC
+print("The timezone on the system is {0} with an offset of {1}".format(time.tzname, time.timezone))
 
 if time.daylight != 0: #.daylight passes a boolean for localtime
     print("\tDaylight savings is in effect")
