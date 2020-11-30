@@ -20,10 +20,10 @@ numbers = list(range(1, 101))
 # .choise() returnes a random value from the passed iterable.
 print(f".choice(): {ran.choice(numbers)}\n")
 
-# .choices() returns a list with the randomly selected element from the specified sequence.
+# .choices(i, k) returns a list of k values randomly selected from the specified iterable.
 print(f".choices(): {ran.choices(numbers, k=12)}")    # k defines the length of returned list.
 
-# .randrange() returns a randum number from the given range
+# .randrange() returns a random number from the given range
 print(f'.randrange(): {ran.randrange(1, 5000, 3)}\n')
 
 # .randint() does not support a step function
