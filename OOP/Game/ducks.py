@@ -1,3 +1,10 @@
+"""learning Polymorphism through composition.
+Polymorphism through composition is when a class has attributes
+that are composed of objects defined by another class.
+like on line 24 the _wing attribute of Duck Class is an Object of
+Wing class, so therefore Duck has attributes COMPOSED of other class
+instances."""
+
 class Wing(object):
 
     def __init__(self, ratio):
