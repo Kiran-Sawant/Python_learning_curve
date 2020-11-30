@@ -64,7 +64,7 @@ wbEq.range('A1').value = list(range(0, 10))                         #this writes
 wbEq.range('A1').options(transpose=True).value = list(range(0, 10)) #this writes data vertically from the range
 
 #expand
-data1 = wbEq.range('A1').expand().value                 #passes the values in range even after updaing the excel file
+data1 = wbEq.range('A1').expand().value                 #passes the values in range even after updating the excel file
 data2 = wbEq.range('A1').options(expand='table').value  #expand can be right or left, for vertical or horizontal only updates
 
 print(data1)
