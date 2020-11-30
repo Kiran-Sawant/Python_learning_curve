@@ -42,7 +42,7 @@ def display():
 
 #_______________________applying multiple decorators_________________________#
 '''while applying multiple decorators to a function it is necessary to apply
-   the @wraps() decorater of functools module to the closures of the decorator
+   the @functools.wraps() decorater of functools module to the closures of the decorator
    functions or else the second decorator takes the wrapper function of the
    first decorator as an argument & not the function on which the decorator is applied to'''
 
