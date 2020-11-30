@@ -3,7 +3,7 @@
     loops or be converted into a list of tuples, dictionaries or a tuple of tuples.
     enumarate() is like adding a serial no to the outputs of an iterator."""
 
-x = ['apple', 'banana', 'cherry', 'killer', 'Bean', 'himmaniler']
+x = ['apple', 'banana', 'cherry', 'killer', 'Bean', 'forever']
 j = enumerate(x)                #creating an enumarate object
 for i in j:
     print(i)
