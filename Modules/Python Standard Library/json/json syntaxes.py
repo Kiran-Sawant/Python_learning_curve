@@ -21,12 +21,14 @@ people_string = """
 }
 """
 
-# loading JSON string into a python variable
+# loading JSON string into a python dictionary
 data = json.loads(people_string)
+print(type(data))
+
 for i in data['people']:
     del i['phone']
 
-# loading a python object injo a JSON string
+# loading a Python dict into a string
 new_string = json.dumps(data, indent=2)
 
 #_______Working with JSON files_________#
