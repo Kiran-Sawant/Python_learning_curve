@@ -65,7 +65,7 @@ class Flock(object):
     def add_duck(self, duck: Duck) -> None:         #Type annotation
         fly_method = getattr(duck, 'fly', None)     #checks if passed argument in '' is in the object, if not passes defalt value
         if callable(fly_method):
-        # if isinstance(duck, Duck):                #Checks if the first argument is an instance of the second one
+        # if isinstance(duck, Duck):                #Checks if the argument is an instance of the given class
             self.flock.append(duck)
         else:
             raise TypeError(f"Cannot add duck, are you sure its not a {str(type(duck).__name__)}?")
@@ -75,7 +75,7 @@ class Flock(object):
         for duck in self.flock:
             try:
                 duck.fly()
-                raise AttributeError("Testing exception handeling.")         # TODO remove before release
+                # raise AttributeError("Testing exception handeling.")         # TODO remove before release
             except AttributeError as e:             #Getting a refrence of error in variable e
                 print("One duck Down")
                 problem = e
