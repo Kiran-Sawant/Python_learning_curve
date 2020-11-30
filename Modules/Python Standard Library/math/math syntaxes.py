@@ -43,8 +43,8 @@ print(f"remainder(67, 7): {math.remainder(67, 7)}\n")
 # math.perm(n, k) returns the number of ways to choose k items from n items with order and without repetition.
 # print(f"{math.perm(len(range(1,101)), 20)}")
 
-# math.comb(n, k) returns the number of ways to pick k unordered items from n items, without repetition, known as combinations.
-# print(f"{math.perm(len(range(1,101)), 20)}")
+# math.comb(n, k) returns the number of ways to pick k unordered items from n items, with repetition, known as combinations.
+# print(f"{math.comb(len(range(1,101)), 20)}")
 
 #______________Logarithmic Operations__________________#
 
@@ -66,7 +66,7 @@ print(f"radians(180): {math.radians(180)}")
 # math.dist(p, q) returns Euclidean distance between two single-dimensional points
 # print(f"dist(3, 4): {math.dist(3, 4)}")
 
-# math.hypot(p, b) Find the hypotenuse of a right-angled triangle with perpendicular and base
+# math.hypot(p, b) Find the hypotenuse of a right-angled triangle with perpendicular(p) and base(b)
 print(f"hypot(10, 5): {math.hypot(10, 5)}\n")
 
 #_____________Trigonometric Operations_________________#
