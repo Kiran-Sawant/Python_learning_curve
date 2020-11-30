@@ -24,11 +24,17 @@ print(next(counter))
 print(next(counter))
 print(next(counter))
 
-# .repeat method___________________________________________#
-""" .repeat() returns the object for a specified ammount of
-    time, if not specified returns the object indefinetly"""
+# .repeat() method___________________________________________#
+""" .repeat(o, t) creates an iterable of the specified object(o) for
+the specified number of times(t)."""
 
-counter = it.repeat(2, times=2)
+def k():
+    return 'Killer Bean'
+
+counter = it.repeat(k(), 3)     # counter is an iterable that will return the output of k 3 times
+
+for i in counter:
+    print(i)
 
 #______________Combinations & Permutations_________________#
 
@@ -47,7 +53,7 @@ for item in result2:
     print(item)
 
 # .product() method___________________________#
-""" .product() returns the cartician product,
+""" .product() returns the cartesian product,
     ie. possible permutations where values can
     repeat specified times"""
 
