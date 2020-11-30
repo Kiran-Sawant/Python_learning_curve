@@ -19,7 +19,7 @@ class Kettle(object):
 print(f"\nKettle dir: {dir(Kettle)}\n")
 
 #_____________vars()____________#
-"""The vars() function returns the __dic__ attribute of an object.
+"""The vars() function returns the __dict__ attribute of an object.
     The __dict__ attribute is a dictionary containing the object's
     changeable attributes."""
 
@@ -39,7 +39,7 @@ j = getattr(k, 'price', 'Not there')
 print(f"\ngetattr(k, 'price', 'Not there'): {j}")
 
 m = setattr(k, 'price', 2000)       #setting the price of k
-print(f"Resetted price: {k.price}")
+print(f"Resetted price: {k.price}\n")
 
 #_____________delattr()______________#
 """The delattr() function will delete the specified attribute
@@ -50,6 +50,7 @@ print(f"Resetted price: {k.price}")
 # print(f"k.price: {k.price}\n")
 
 #_____________hasattr()_______________#
+"""Returns True if the specified object has the specified attribute."""
 
 print(f"hasattr(k, 'switch_on'): {hasattr(k, 'switch_on')}\n")
 
@@ -74,9 +75,11 @@ print(f"isinstance(10, int): {isinstance(10, int)}\n")
     is a subclass of the specified object, otherwise False.
     Syntax: issubclass(object, subclass)"""
 
+# Creating parent class
 class myAge:
   age = 36
 
+# Creating subclass
 class myObj(myAge):
   name = "John"
   age = myAge
