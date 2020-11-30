@@ -14,7 +14,8 @@ for i in daily_data:
 
 # .cycle() method____________________________________________#
 """.cycle() method does not stop after the completion of the
-    iterable it keeps repeating the values of the iterable"""
+    iterable it keeps repeating the values of the iterable
+    from left to right."""
 
 counter = it.cycle([1, 2, 3])
 
@@ -33,7 +34,7 @@ counter = it.repeat(2, times=2)
 
 letters = ['a', 'b', 'c', 'd']
 numbers = [1, 2, 3]
-names = ['Corey', 'Nicole']
+names = ('Corey', 'Nicole')
 
 result = it.combinations(letters, 2)
 
@@ -65,10 +66,11 @@ for item in result4:
     print(item)
 
 # .chain() method______________________________________#
-""" .chain() combines the output of passed iterables in
+""" .chain() combines the items of passed iterables in
     the order they are passed, regardless of the type of
     iterable passed."""
 
+# Combining 2 lists & a tuple
 combined = it.chain(letters, numbers, names)
 
 for item in combined:
@@ -99,7 +101,6 @@ result2 = it.filterfalse(letters, selectors)
     it encounters a value that satisfyes the criteria."""
 
 result3 = it.dropwhile(letters, selectors)
-
 # .takewhile() method_____________________________#
 """ .takewhile() is the opposite of .dropwhile()"""
 
