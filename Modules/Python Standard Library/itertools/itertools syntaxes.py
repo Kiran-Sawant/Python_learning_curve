@@ -77,7 +77,8 @@ for item in combined:
     print(item)
 
 # .islice() method_________________________________#
-""" .islice() grabes a slice of passed iterable."""
+""" .islice(i, k, n) grabes a slice of passed iterable(i),
+from k to n-1."""
 
 result = it.islice(range(10), 2, 8)         # grabbing values from index 2~8
 
@@ -86,6 +87,7 @@ result = it.islice(range(10), 2, 8)         # grabbing values from index 2~8
     that are true in the corrosponding selector iterable.
     The selector iterable can be a generator as well."""
 
+# Creating a selector iterable
 selectors = [True, True, False, True]
 
 result = it.compress(letters, selectors)
@@ -98,7 +100,7 @@ result2 = it.filterfalse(letters, selectors)
 # .dropwhile() method_________________________#
 """ .dropwhile() is the same as .filterfalse,
     however it stops applying the filter after
-    it encounters a value that satisfyes the criteria."""
+    it encounters a value that satisfies the criteria."""
 
 result3 = it.dropwhile(letters, selectors)
 # .takewhile() method_____________________________#
