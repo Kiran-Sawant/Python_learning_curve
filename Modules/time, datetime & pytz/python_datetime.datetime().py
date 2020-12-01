@@ -2,22 +2,29 @@ import datetime
 import pytz
 import time
 
+# Creating a timezone object
 Tzone = pytz.timezone('America/New_York')
 
 #________________________________datetime creating methods_______________________________________#
-LocalTime = datetime.datetime.today() #gives the local date & local time of the system
+# .today() gives the local date & local time of the system
+LocalTime = datetime.datetime.today()
 print('System Local time is: ', LocalTime)
 
-InternationalTime = datetime.datetime.now().astimezone(Tzone) # .now gives local time, .astimezone() takes a timezone element for .now() method
-print('NewYork time is: ', InternationalTime)                 #which will give local time of the timezone passed
+# .now() gives local time, .astimezone() takes a timezone element for .now() method
+#that gives local time of the timezone passed
+InternationalTime = datetime.datetime.now().astimezone(Tzone)
+print('NewYork time is: ', InternationalTime)
 
+# .tcnow() gives the current UTC date & time
 utc = datetime.datetime.utcnow()
-print('UTC time is: ', utc) #gives the current UTC date & time
+print('UTC time is: ', utc)
 
-Time = datetime.datetime.fromtimestamp(time.time()) #.fromtimestamp gives a datetime object from passed POSIX time stamp
+# .fromtimestamp() gives a datetime object from passed POSIX time stamp
+Time = datetime.datetime.fromtimestamp(time.time())
 print('Time from timestamp: ', Time)
 
-combo = datetime.datetime.combine(LocalTime.date(), utc.time(), InternationalTime.tzinfo) #creates a new datetime from the passed date, time & tzelement
+# .combine() creates a new datetime from the passed date, time & tzelement
+combo = datetime.datetime.combine(LocalTime.date(), utc.time(), InternationalTime.tzinfo)
 print('local date with UTC time & NY timezone: ', combo)
 
 #___________________________.datetime() attributes___________________________________#
