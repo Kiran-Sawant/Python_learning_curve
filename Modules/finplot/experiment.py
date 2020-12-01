@@ -1,16 +1,32 @@
-import finplot as fplt
+"""plotting OCHLV, EMAs & stddev"""
+
 import MetaTrader5 as mt5
+import finplot as fplt
 import pandas as pd
 
 mt5.initialize()
 
-rates = mt5.copy_rates_from_pos('USDTRY', mt5.TIMEFRAME_D1, 100, 90)
 
-rates_frame = pd.DataFrame(rates)
+# symbol = input('Enter the symbol').upper()
 
-rates_frame['time'] = pd.to_datetime(rates_frame['time'], unit='s')
+rates = pd.DataFrame(mt5.copy_rates_from_pos('EURUSD', mt5.TIMEFRAME_H1, 1, 240)).drop(columns=['spread', 'real_volume'])
+rates['time'] = pd.to_datetime(rates['time'], unit='s')
 
-# candles = rates_frame[['time', 'open', 'high', 'low', 'close']]
-# fplt.candlestick_ochl(candles)
+#______Plotting_______#
+ax, ax2 = fplt.create_plot(title='EURUSD H1', rows=2)
+axo = ax.overlay()
+
+fplt.candlestick_ochl(rates[['time', 'open', 'close', 'high', 'low']], ax=ax)
+fplt.volume_ocv(rates[['time', 'open', 'close', 'tick_volume']], ax=axo)
+
+fplt.plot(rates['close'].ewm(8).mean(), legend='8 EMA', ax=ax)
+fplt.plot(rates['close'].ewm(24).mean(), legend='24 EMA', ax=ax)
+
+roll_std = (rates['close'].rolling(24).std()) * 100
+fplt.plot(roll_std, legend='24 std-dev', ax=ax2)
+fplt.add_text(ax=ax2, pos=(rates['time'].iloc[-1], roll_std[roll_std.index[-1]]), s=str(roll_std[roll_std.index[-1]]))
+
+# print(roll_std[roll_std.index[-1]])
 
 fplt.show()
+mt5.shutdown()
