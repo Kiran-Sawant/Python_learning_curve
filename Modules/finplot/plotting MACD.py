@@ -10,8 +10,7 @@ symbol = input('Enter symbol: ').upper()
 
 rate = pd.DataFrame(mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 200))
 
-# rate['time'] = pd.to_datetime(rate['time'], unit='s')
-# print(rate)
+rate['time'] = pd.to_datetime(rate['time'], unit='s')
 
 #________Settingup plot________#
 
