@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 wBook = xl.Book('experiment.xlsx')
-data = wBook.sheets('data')
+data = wBook.sheets['data']
 
 #________________dictionary converter______________#
 #reading
