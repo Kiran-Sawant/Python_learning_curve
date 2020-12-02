@@ -11,7 +11,7 @@ mainWindow.geometry('1280x720+350+130') #size of window & offset from LHS and to
 column will get if the window is expanded. eg. If in a window 3 columns have
 weight of 1, 2, 3 and x amount of new space is created then the new space will be
 divided in a ratio of 2:3 between column 2 & 3.
-If weight is not set, the rows/columns will not expand."""
+    If weight is not set, the rows/columns will not expand."""
 
 mainWindow.columnconfigure(0, weight=1) 
 mainWindow.columnconfigure(1, weight=1)
