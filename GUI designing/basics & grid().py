@@ -6,9 +6,16 @@ mainWindow.title('Hello Python')        #title of GUI window
 mainWindow.geometry('1280x720+350+130') #size of window & offset from LHS and top. use '-' for RHS & bottom offseting
 
 #_________Configuring columns__________#
-mainWindow.columnconfigure(0, weight=1) #https://stackoverflow.com/questions/45847313/what-does-weight-do-in-tkinter
-mainWindow.columnconfigure(1, weight=1) #weight of a row or column ssigns all the remaining space in the master to the row or column
-mainWindow.columnconfigure(2, weight=1) #if all columns have equal weight extra spaces in master will be equally distributed or according to the ratio of their weights
+"""https://stackoverflow.com/questions/45847313/what-does-weight-do-in-tkinter
+    Weight of a column or a row determines how much new space that perticular row or
+column will get if the window is expanded. eg. If in a window 3 columns have
+weight of 1, 2, 3 and x amount of new space is created then the new space will be
+divided in a ratio of 2:3 between column 2 & 3.
+If weight is not set, the rows/columns will not expand."""
+
+mainWindow.columnconfigure(0, weight=1) 
+mainWindow.columnconfigure(1, weight=1)
+mainWindow.columnconfigure(2, weight=1)
 
 #______________Creating widgets_______________#
 label = tk.Label(mainWindow, text='Hello Ugly World')
