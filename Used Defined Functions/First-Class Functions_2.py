@@ -1,6 +1,6 @@
-"""Here, html_tag is a first-class function that can be assigned to a variable(line 10),
+"""Here, html_tag is a first-class function that can be assigned to a variable(line 12),
    passed as an argument(line 12, 14, 16), return these functions from other functions
-   remember!, First-class function must return the enclosing function & mustn't execute it"""
+   remember!, First-class function must return the enclosing function & mustn't execute it."""
 
 def html_tag(tag):
 
