@@ -1,4 +1,4 @@
-'''Closures are the enclosed functions inside of a function.
+'''Closures are the enclosed functions inside of a First-class function.
    Closures can access variables defined in their outer scope
    even when the outer function is finished executing'''
 
