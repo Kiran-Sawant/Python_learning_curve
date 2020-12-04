@@ -40,7 +40,7 @@ class decorator_class():
 def display():
     print("Display function ran")
 
-# display = decorator_func(display)     #This is same as line 20~21
+# display = decorator_func(display)     #This is same as line 39~40
 
 @decorator_func
 def display_info(name, age):
@@ -51,7 +51,7 @@ def display_info(name, age):
 def display2():
     print("Display2 function ran")
 
-# display2 = decorator_class(display2)     #This is same as line 30~31
+# display2 = decorator_class(display2)     #This is same as line 50~51
 
 @decorator_class
 def display_info2(name, age):
