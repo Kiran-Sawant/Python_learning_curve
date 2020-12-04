@@ -7,9 +7,9 @@ def getint():
             return number
         except EOFError:
             sys.exit(1)
-        except: #wildcard exception excepts everything [ValueError]
+        except:                                             # wildcard exception excepts everything [ValueError]
             print('Wrong value inserted!, try again..')
-        finally:                                            #finally is always executed whether exception or not
+        finally:                                            # finally is always executed whether exception or not
             print("Finally always executes")
 
 no_1 = getint()
@@ -20,5 +20,5 @@ try:
 except ZeroDivisionError:
     print(f"{no_1} cannot be divided by {no_2}")
     sys.exit(2)
-else:                                                       #else is executed after the try block is successful & exception was not raised
+else:                                                       # else is executed when the try block is successful & exception is not raised
     print("Division was successful!")
