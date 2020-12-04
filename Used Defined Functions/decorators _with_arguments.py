@@ -10,7 +10,7 @@ def prefix(pre):        #defining a decorator function that takes an argument an
         return wrapper
     return decorator_func
 
-@prefix('LOG: ')
+@prefix('LOG: ')                # Decorator with an argument
 def display_info(name, age):
     print("display_info ran with ({0}, {1})".format(name, age))
 
