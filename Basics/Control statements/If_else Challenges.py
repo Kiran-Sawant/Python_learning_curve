@@ -1,3 +1,8 @@
+"""Write a small program to ask for name & age.
+when the values are entered check if the person is the
+right age to go for a 18~30 holiday, they must be over 18
+and under 31."""
+
 name = str(input("Enter your name: "))
 age = int(input("What's your age {0}? ".format(name)))
 
