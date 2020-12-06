@@ -63,11 +63,11 @@ class Flock(object):
         self.flock = list()
 
     def add_duck(self, duck: Duck) -> None:         #Type annotation
-        fly_method = getattr(duck, 'fly', None)     #checks if passed argument in '' is in the object, if not passes defalt value
+        fly_method = getattr(duck, 'fly', None)     #Checks if the object contains the passed argument in '', if not gives error/default value.
         if callable(fly_method):
         # if isinstance(duck, Duck):                #Checks if the argument is an instance of the given class
             self.flock.append(duck)
-        else:
+        else:                                       # raise error if the passed object is not an instance of Duck
             raise TypeError(f"Cannot add duck, are you sure its not a {str(type(duck).__name__)}?")
 
     def migrate(self):
