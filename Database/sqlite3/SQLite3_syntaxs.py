@@ -5,6 +5,7 @@ import sqlite3 as sql
 #____________creating a connection object_____________#
 """connection objects represesnts the database.
    isolation_level=None autocommits transactions"""
+
 db1 = sql.connect('contacts.sqlite3', isolation_level=None)
 
 #__________connection Methods____________#
