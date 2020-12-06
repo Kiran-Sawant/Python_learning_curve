@@ -1,0 +1,17 @@
+There are 4 levels of logs dependiing on the criticalness of the problem.
+DEBUG is for logging while testing.
+INFO is logging any information.
+The default level of the root logger is set to WARNING in which case it will not log
+any log calls below its level ie. level 2 & 1.
+If the default is set to INFO the logger will not log DEBUG calls.
+
+1. DEBUG: Detailed information, typically of interest only when diagnosing problems.
+
+2. INFO: Confirmation that things are working as expected.
+
+3. WARNING: An indication that something unexpected has happened, or indicate some problem in the near future.
+the software is still working as expected.
+
+4. ERROR: Due to some serious problem the software has not been able to perform some function.
+
+5. CRITICAL: A serious problem, indicating that the program itself maybe unable to continue running.
