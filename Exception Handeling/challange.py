@@ -1,4 +1,7 @@
-"""Lost"""
+"""Write a short program to ask the user two enter two integer numbers,
+then print out the first number divided by the second number.
+The program shouldn't crash, no matter what the user types in.
+(Lost)"""
 
 def getint():
     while True:
