@@ -1,0 +1,40 @@
+INFO: root : Createed employee: <bound method Employee.fullname of <__main__.Employee object at 0x000000000298A908>> - <bound method Employee.email of <__main__.Employee object at 0x000000000298A908>>
+INFO: root : Createed employee: <bound method Employee.fullname of <__main__.Employee object at 0x000000000298A9C8>> - <bound method Employee.email of <__main__.Employee object at 0x000000000298A9C8>>
+INFO: root : Createed employee: <bound method Employee.fullname of <__main__.Employee object at 0x0000000002A45608>> - <bound method Employee.email of <__main__.Employee object at 0x0000000002A45608>>
+INFO: root : Createed employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: root : Createed employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: root : Createed employee: Avery Carrington - Avery.Carrington@email.com
+INFO: root : Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: root : Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: root : Created employee: Avery Carrington - Avery.Carrington@email.com
+DEBUG: root : Addition of 10 & 5 is 15
+INFO: root : subtraction of 10 with 5 is 5
+ERROR: root : Product of 10 & 5 is 50
+WARNING: root : Division of 10 by 5 is 2.0
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com
+INFO: custom_loggers: Created employee: Ken Rosenberg - Ken.Rosenberg@email.com
+INFO: custom_loggers: Created employee: Tommy Vercetti - Tommy.Vercetti@email.com
+INFO: custom_loggers: Created employee: Avery Carrington - Avery.Carrington@email.com

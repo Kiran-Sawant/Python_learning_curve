@@ -1,0 +1,14 @@
+DEBUG: __main__: Addition of 10 & 0 is 10
+INFO: __main__: subtraction of 10 with 0 is 10
+ERROR: __main__: Product of 10 & 0 is 0
+ERROR: __main__: Tried dividing with zero!
+DEBUG: __main__: Division of 10 by 0 is None
+DEBUG: __main__: Addition of 10 & 0 is 10
+INFO: __main__: subtraction of 10 with 0 is 10
+ERROR: __main__: Product of 10 & 0 is 0
+ERROR: __main__: Tried dividing with zero!
+Traceback (most recent call last):
+  File "d:/my_space/software_projects/Python/Learning_curve/Modules/Python Standard Library/logging/Multilog.py", line 47, in divide
+    result = x / y
+ZeroDivisionError: division by zero
+DEBUG: __main__: Division of 10 by 0 is None
