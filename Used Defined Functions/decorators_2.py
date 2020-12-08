@@ -10,7 +10,7 @@ def my_logger(func):
     log.basicConfig(filename='{0}'.format(func.__name__), level=log.INFO)       #configuring log file
 
     @ft.wraps(func)
-    def wrapper(*args, **kwargs):
+    def wrapper(*args, **kwargs):   # Here wrapper has access to args & kwargs of func
         log.info("Ran with args: {0}, and kwargs: {1}".format(args, kwargs))
         return func(*args, **kwargs)
 

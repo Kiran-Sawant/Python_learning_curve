@@ -1,3 +1,6 @@
+"""Write a program that asks the user to enter a name and retrives
+all the rows from the table 'contacts' with similar names."""
+
 import sqlite3 as sql
 
 db = sql.connect("contacts.sqlite3")

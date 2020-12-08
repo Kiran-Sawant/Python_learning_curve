@@ -5,7 +5,9 @@ closure function.
 decorated function. It performs the defined operation and finally returns
 the original decorated function.
     The closure can access variables in its non-local scope even after the
-first-class function is done executing.
+first-class function is done executing, eg. at line 25 wrapper has access to
+args & kwargs of original function which itself is an argument to decorator
+function.
     Decorator functions are used to perform tasks that might needed to be
 performed everytime before a function is called, eg: logging the time & arguments
 of a function call, making a database entry everytime a function is called, etc.
@@ -20,7 +22,7 @@ the operation and returns the decorated function."""
 #____________Defining a decorator Function____________#
 def decorator_func(original_func):
 
-    def wrapper_func(*args, **kwargs):      #*args & **kwargs help take functions with multiple arguments as argument
+    def wrapper_func(*args, **kwargs):      # *args & **kwargs of original function
         print('wrapper executed this before {}'.format(original_func.__name__))
         return original_func(*args, **kwargs)
 

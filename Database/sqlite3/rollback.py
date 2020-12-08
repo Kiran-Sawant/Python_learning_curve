@@ -1,3 +1,9 @@
+"""Learning to rollback transactions.
+While executing critical commands from the program one needs to make sure
+that errors in the program do not affect the database.
+In case of errors one can rollback the transactions using the .rollback() method.
+commits must be placed after the .rollback() methods."""
+
 import sqlite3 as sql
 import pytz
 import datetime as dt
@@ -18,10 +24,10 @@ class Account():
         cursor = db.execute("SELECT name, balance FROM accounts WHERE (name = ?)", (name,))
         row = cursor.fetchone()
 
-        if row:                             # equivalent to if row is not None
+        if row:                             # name already in database, if row not None
             self.name, self._balance = row
             print(f"Received record for {self.name}. ", end='')
-        else:
+        else:                               # If the entered name is new
             self.name = name
             self._balance = opening_balance
             cursor.execute('INSERT INTO accounts VALUES(?, ?)', (name, opening_balance))
@@ -39,15 +45,15 @@ class Account():
     def _save_update(self, amount):
         new_balance = self._balance + amount
         deposit_time = Account._current_time()
-        try:
+        try:        # Saving transaction into DB
             db.execute("UPDATE accounts SET balance = ? WHERE (name = ?)", (new_balance, self.name))
             db.execute("INSERT INTO history VALUES (?, ?, ?)", (deposit_time, self.name, amount))
         except sql.IntegrityError:
-            db.rollback()
-        else:
+            db.rollback()       # undo changes if error
+        else:                   # if no error
             self._balance = new_balance
         finally:
-            db.commit()
+            db.commit()         # save changes
 
     def deposit(self, amount: int) -> float:
         if amount > 0.0:
