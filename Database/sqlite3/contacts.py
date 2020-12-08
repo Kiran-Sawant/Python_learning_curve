@@ -9,7 +9,7 @@ db.execute("INSERT INTO contacts (name, phone_no, email_id) VALUES('Tim', 165568
 db.execute("INSERT INTO contacts (name, phone_no, email_id) VALUES('Brian', 123456, 'brian@gmail.com')")
 
 #_______creating a cursor object________#
-cursor = db.cursor()
+cursor = db.cursor() # setting a cursor
 cursor.execute('SELECT * FROM contacts')
 print(cursor.fetchall())
 
@@ -18,7 +18,7 @@ for name, phone, email in cursor:
     print(phone)
     print(email)
     print('=' * 20)
-cursor.close()      #setting a cursor
+cursor.close()      # Closing a cursor
 
-db.commit()         #Fixing the changes permanently
-db.close()          #ending connection with Database
+db.commit()         # Fixing the changes permanently
+db.close()          # Ending connection with Database
