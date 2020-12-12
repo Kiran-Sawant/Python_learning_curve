@@ -10,7 +10,10 @@ If a variable is not meant to be displayed, don't make a getter method for it.
 The inbuilt property() method returns a property objects that can be assigned to
 variables. Property can takes 4 arguments, getter method, a setter method, delete
 method and a doc string. Only the properties passed in the property method are 
-available to that variable."""
+available to that variable.
+If a user tries to set a value to an attribute for which only a getter is 
+available or tries to get the value of an attribute for which only a
+setter is available python will through an AttributeError."""
 
 class Player(object):
     """creates a player object.
