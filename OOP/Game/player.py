@@ -1,24 +1,37 @@
+"""     Learning getters, setters and property.
+Sometimes there are attributes in a class that are not meant to be shown directly or
+not allowed to be modified directly or maybe both called hidden variable (a.k.a private variable).
+A getter method returns the value of a hidden variable.
+A setter method sets the value of a variable to the passed argument.
+One can pass conditional statements in the getters and setters as well.
+If a variable is not meant to be changed, don't make a setter method for it.
+If a variable is not meant to be displayed, don't make a getter method for it.
+
+The inbuilt property() method returns a property objects that can be assigned to
+variables. Property can takes 4 arguments, getter method, a setter method, delete
+method and a doc string. Only the properties passed in the property method are 
+available to that variable."""
+
 class Player(object):
     """creates a player object.
     
     Attributes:
-        name (str): Name of the player"""
+        name (str): Name of the player.
+        _lives (int): Number of attempts till game over.
+        _level (int): stage @ which player is playing.
+        _score (int)"""
 
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
         self._lives = 3
         self._level = 1
         self._score = 0
-    #____________Getters and Setters_____________#
-    """A getter method passes the value of the variable,
-    A setter method sets the value of the variable to the passed argument.
-    if a variable is not ment to be changed don't make a setter method for it
-    if a variable is not ment to be displayed don't make a getter method for it"""
+
     #_____getters & setters for lives_____#
     def _get_lives(self):           #Getter for _lives
         return self._lives
 
-    def _set_lives(self, lives):    #Setter for _lives
+    def _set_lives(self, lives: int):    #Setter for _lives
         if lives >= 0:
             self._lives = lives
         else:
@@ -39,12 +52,13 @@ class Player(object):
             print('level cannot be less than 1')
             self._level = 1
 
-    lives = property(_get_lives, _set_lives) #in property getter is entered first and then setter
-    level = property(_get_level, _set_level) #if only a setter is mentioned the attribute becomes write only
-                                             #if only a getter is mentioned the attribute becomes read only
-
+    """With these properties one can do player_object.lives=n to set lives
+    or player_object.lives to retrive lives."""
+    lives = property(fget=_get_lives, fset=_set_lives) # If only a getter is mentioned the attribute becomes read only.
+    level = property(fget=_get_level, fset=_set_level) # If only a setter is mentioned the attribute becomes write only.
+                                                       # If a delete method is not passed one cannot delete the attribute.
+    
     #_____getters & setters using decorators______#
-
     @property       #getter using decorator
     def score(self):
         return self._score
@@ -56,7 +70,7 @@ class Player(object):
     
 
     def __str__(self):
-        """The __str__ method makes the class instance printable.
+        """The __str__ dunder/magic method makes the class instance printable.
         if a Player object is passed in a print statement, it will
         print the string passed in the return statement of the __str__ method"""
 
