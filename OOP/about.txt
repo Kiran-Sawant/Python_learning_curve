@@ -1,0 +1,10 @@
+    This folder contains scripts that impliment Object Oriented Programming in Python.
+One can learn basics of classes, class instances, attributes and methods in classes.py script
+module_1 & module_2 are there to explain if __name__ == __main__: .
+accounts.py goes over mangled attributes, hidden attributes and static methods.
+song is a small project that uses OOP to segrigate songs from a txt file.
+Game contains scripts that impliment inheritance, getter & setter methods and method overriding.
+Polymorphism contains script that impliments polymorphism through composition and aggrigation.
+
+    This section only deals with how OOP is implimented in Python, and not how Object Oriented
+programs are designed or how to design object oriented software.
