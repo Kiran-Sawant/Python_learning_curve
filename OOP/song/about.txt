@@ -1,0 +1,17 @@
+    This Project segrigates information about a song into different related lists.
+
+    It reads albums.txt in which each line represents info of a song.
+The program consists of a load_data() function that returns a list of Artist objects,
+each Artist object contains a list of Album objects for that perticular artist.
+Album objects contain a list of Song objects of that Album.
+
+    When we execute the load_data() function it creates a Artist object and appends it to
+its own list. Then it uses the .add_song() method defined in the Artist class and passes
+the album_field as well to search for that album in album_list in Artist class, if not found
+Artist class creates an Album object and appends it to its Album list, then it uses the
+.add_track() method defiened in the Album class to search for song, creates and adds it if not found.
+    The load_data() moves to the next line in txt file and repeats the process, this time if the
+fields are already found in the lists, skips creating the objects, appends them to the list and
+executes the secondary process(add_song, add_track).
+
+The seaching if achieved through a find_object() function.
