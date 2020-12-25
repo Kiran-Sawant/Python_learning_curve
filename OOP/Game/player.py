@@ -1,6 +1,7 @@
 """     Learning getters, setters and property.
 Sometimes there are attributes in a class that are not meant to be shown directly or
-not allowed to be modified directly or maybe both called hidden variable (a.k.a private variable).
+not allowed to be modified directly or maybe both called hidden variable (a.k.a private variable),
+do not mention a private variable in DocString of the class.
 A getter method returns the value of a hidden variable.
 A setter method sets the value of a variable to the passed argument.
 One can pass conditional statements in the getters and setters as well.
@@ -12,17 +13,14 @@ variables. Property can takes 4 arguments, getter method, a setter method, delet
 method and a doc string. Only the properties passed in the property method are 
 available to that variable.
 If a user tries to set a value to an attribute for which only a getter is 
-available or tries to get the value of an attribute for which only a
-setter is available python will through an AttributeError."""
+available, or tries to get the value of an attribute for which only a
+setter is available, python will through an AttributeError."""
 
 class Player(object):
     """creates a player object.
     
     Attributes:
-        name (str): Name of the player.
-        _lives (int): Number of attempts till game over.
-        _level (int): stage @ which player is playing.
-        _score (int)"""
+        name (str): Name of the player."""
 
     def __init__(self, name: str):
         self.name = name

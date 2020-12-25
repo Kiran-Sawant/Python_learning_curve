@@ -1,9 +1,9 @@
-"""static methods, mangled instance attributes, hidden variables.
+"""static methods, mangled attributes, hidden variables.
 
 Methods that are not called outside of a class but rather used by
 other methods inside of the class are called static methods.
-A Static methods name should start with an underscore and must have
-a @staticmethod decorater.
+A Static methods name, should start with an underscore and must have
+a @staticmethod decorator.
 
 Attributes that are not meant to be accessed by outside of a class can be mangled
 by putting __ in the start. in this way the variable becomes _classname__var.
@@ -11,7 +11,7 @@ by putting __ in the start. in this way the variable becomes _classname__var.
 Variables that are not meant to be changed can be made hidden by putting
 an _ at the start of their name, in this way they will not be shown in the
 intelliscence of the IDE. however, that does not mean that the variable
-cannot be changed, it just indicates other ppl that the variable is not
+cannot be changed, it just indicates to other ppl that the variable is not
 meant to be changed."""
 
 import datetime as dt
@@ -30,10 +30,11 @@ class Account:
     def _current_time():
         '''static methods are only used inside a class and start with a underscore conventionally
        they can be used outside classes as well but doing so is not adviced'''
+
         utc_time = dt.datetime.utcnow()
         return pytz.utc.localize(utc_time)
 
-    def __init__(self, _name, __balance): #__balance is a mangled attribute
+    def __init__(self, _name, __balance):
         self._name = _name                #attribute names starting with double underscore are mangled
         self.__balance = __balance        #__balance is mangled with class name ie. _Account__balance
         self.transaction_list = []
