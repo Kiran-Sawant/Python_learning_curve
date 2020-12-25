@@ -14,7 +14,7 @@ class Song:
     def get_title(self):
         return self.title
     
-    name = property(get_title)
+    name = property(get_title)      # Creating a .name getter for find_object function.
 
  #help(Song.__init__)     #prints all the doc strings
  #print(Song.__doc__)     #prints doc strings of applied class
@@ -39,24 +39,27 @@ class Album:
         else:
             self.artist = artist
         
-        self.tracks = []        #____Album's track list____#
+        self.tracks = []        # A list of Song objects
 
-    def add_song(self, song, position=None):
-        '''Adds a song to the track list
+    def add_track(self, track: str, position=None):
+        '''Adds a Song object to the track list.
+        Searches for a song in self.tracks, if not found creates a Song object and appends
+        it to the list.
         
         Args:
-            song (Song): The title of a song to add.
+            track [str]: The title of a song to add.
             position (Optional[int]): If specified, the song will be added to that position
                 in the track list - inserting it between other songs if necessary.
-                Otherwise, the song will be added to the end of the list.'''
+                Otherwise, the song will be added(appending) to the end of the list.'''
         
-        song_found = find_object(song, self.tracks)
+        song_found = find_object(track, self.tracks)
         if song_found is None:
-            song_found = Song(song, self.artist)
+            song_found = Song(track, self.artist)
             if position is None:
                 self.tracks.append(song_found)
             else:
                 self.tracks.insert(position, song_found)
+
 
 class Artist:
     '''Class to store artist details.
@@ -64,7 +67,7 @@ class Artist:
     Attributes:
         name (str): The name of the artist.
         albums(List[Albums]): A list of Albums by the artist.
-            the list includes noly those albums in this collection.
+            the list consists of Album objects.
     Methods:
         add_album: Used to add new album to the artists albums list'''
 
@@ -81,10 +84,11 @@ class Artist:
         self.albums.append(album)
     
     def add_song(self, name, year, title):
-        '''Add a new song to the collection of albums
-        
-        This method will add the song to an album in the collections
-        A new album will be created in the collection if it doesn't already exist.
+        '''Checks for an Album in the self.albums list, If the Album
+        does not exist, a new Album object will be created and appended
+        to self.albums list.
+        This method will add a song to the Albums track list using the
+        .add_song() method of Album class.
         
         Args:
             name (str): Name of the album
@@ -99,17 +103,27 @@ class Artist:
         else:
             print('Found Album: ' + name)
 
-        album_found.add_song(title)
+        album_found.add_track(title)
 
 
 def find_object(field, object_list):
-    '''Check Object_list to see if an object with name attribute is equal to 'field', return it if so'''
+    '''Checks if the passed field is same as the .name attribute
+    of an object in a list of object.
+    returns None if not found'''
+
     for item in object_list:
         if item.name == field:
             return item
     return None
 
 def load_data():
+    """Creates an empty list of Artist objects.
+    Reads each line of a txt file and separates artist, album, year & song name.
+    Checks if the artist already exists in the list, if not creates a new
+    Artist object with that name and appends it to the artist list.
+    If the Artist object already exists in the list, uses .add_song() method
+    and passes album, year and song field.
+    Returns a list of Artist objects after parsing the txt file."""
 
     artist_list = []
 
@@ -121,17 +135,18 @@ def load_data():
             print("{}:{}:{}:{}".format(artist_field, album_field, year_field, song_field))
 
             new_artist = find_object(artist_field, artist_list)
-            if new_artist is None:
+            if new_artist is None:      # If the artist is new.
                 new_artist = Artist(artist_field)
                 artist_list.append(new_artist)
 
-            new_artist.add_song(album_field, year_field, song_field)
+            new_artist.add_song(album_field, year_field, song_field)        # If the artist already exists in artist list.
 
     return artist_list
 
-
 def create_checkfile(artist_list):
-    '''Create a check file from the object data for comparison with the original file'''
+    '''Create a check file from the object data for comparison with the original file
+    if checkfile.txt and albums.txt are the same, segrigation is successfull.'''
+
     with open('checkfile.txt', mode='w') as checkfile:
         for new_artist in artist_list:
             for new_album in new_artist.albums:

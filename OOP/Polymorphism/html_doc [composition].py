@@ -44,17 +44,17 @@ class Body(Tag):
 
         super().display(file=file)
 
-#_______Polymorphism through Aggrigation_______#
+#_______Polymorphism through composition_______#
 class HtmlDoc(object):
-    """The HtmlDoc objects has instance variables
-    that not defined as class objects, but clients can
-    pass other class objects to it. hence implimenting 
-    polymorhism through aggrigation"""
+    """The HtmlDoc object has instance variables
+        that are composed of other class objects,
+        hence implimenting polymorhism through composition"""
 
-    def __init__(self, doc_type, head, body):
-        self._doc_type = doc_type
-        self._head = head
-        self._body = body
+    def __init__(self, title=None):
+
+        self._doc_type = DocType()
+        self._head = Head(title)
+        self._body = Body()
 
     def add_tag(self, name, contents):
         self._body.add_tag(name, contents)
@@ -68,19 +68,13 @@ class HtmlDoc(object):
 
 
 if __name__ == '__main__':
-    #_______creating class instances for creating a page_______#
-    new_body = Body()
-    new_body.add_tag('h1', 'Aggrigation Example')
-    new_body.add_tag('p', "Unlike <strong>composition</strong>, aggrigation uses existing instances"
-                            "of objects to buildup objects.")
-    new_body.add_tag('p', "The composed object doesn't own the object that it's composed of"
-                            "- if it's destroyed, those objects continue to exist.")
-    new_doctype = DocType()
-    new_header = Head('Aggregation document')
+    #________Creatig HtmlDoc Object_________#
+    my_page = HtmlDoc(title='generic title')
+    my_page.add_tag('h1', 'Main heading')
+    my_page.add_tag('h2', 'sub-heading')
+    my_page.add_tag('p', 'This is a paragraph')
 
-    #______Creating as HtmlDoc object______#
-    my_page = HtmlDoc(new_doctype, new_header, new_body)
-
-    #________Writing to an html file________#
-    with open('test2.html', mode='w') as test_doc:
-        my_page.display(file=test_doc)
+    #___________Writing to html file_____________#
+    with open('test.html', mode='w') as test_file:
+        my_page.display(file=test_file)
+    my_page.display()
