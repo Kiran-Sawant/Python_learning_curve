@@ -1,5 +1,6 @@
 """Read this documentation:-
-https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/events.html"""
+https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/events.html
+TODO complete the code"""
 
 import tkinter as tk
 
