@@ -1,3 +1,5 @@
+"""https://docs.python.org/3/library/threading.html"""
+
 import threading as thread
 import queue as q
 import time
@@ -23,7 +25,7 @@ def threader():
 que = q.Queue()
 
 # creating threads
-for i in range(10):
+for i in range():
     t = thread.Thread(target=threader)
     t.daemon = True
     t.start()
