@@ -24,8 +24,8 @@ def threader():
 # Creating a Queue DataStructure
 que = q.Queue()
 
-# creating threads
-for i in range():
+# creating 10 threads
+for i in range(10):
     t = thread.Thread(target=threader)
     t.daemon = True
     t.start()
