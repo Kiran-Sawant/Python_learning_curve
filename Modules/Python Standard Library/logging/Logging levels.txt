@@ -1,4 +1,4 @@
-There are 4 levels of logs dependiing on the criticalness of the problem.
+There are 4 levels of logs depending on the criticalness of the problem.
 DEBUG is for logging while testing.
 INFO is logging any information.
 The default level of the root logger is set to WARNING in which case it will not log

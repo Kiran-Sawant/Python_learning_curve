@@ -3,8 +3,8 @@ of the employee everytime an employee object is created."""
 
 import logging as log
 
-path = r"D:\my_space\software_projects\Python\Learning_curve\Modules\Python Standard Library\logging"
-log.basicConfig(level=log.DEBUG, filename=path + r'\employee.log',
+path = __file__.replace('employee.py', 'employee.log')
+log.basicConfig(level=log.DEBUG, filename=path,
                 format='%(levelname)s: %(name)s : %(message)s')
 
 class Employee():
@@ -21,6 +21,7 @@ class Employee():
     def fullname(self):
         return f"{self.firstname} {self.lastname}"
 
+# Creating Employee instances
 emp1 = Employee('Ken', 'Rosenberg')
 emp2 = Employee('Tommy', 'Vercetti')
 emp3 = Employee('Avery', 'Carrington')

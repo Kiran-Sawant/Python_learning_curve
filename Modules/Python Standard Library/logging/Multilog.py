@@ -1,7 +1,7 @@
 """This script corrects the problem in the important.py script.
 Here, the imported module(custom_loggers) has a custom logger,
-and the main script uses custom logger as well, hence they can keep log
-on different log files."""
+and the main script uses custom logger as well, hence they can
+keep log on different log files."""
 
 import logging as log
 import custom_loggers as cl
@@ -15,10 +15,10 @@ logger.setLevel(log.DEBUG)
 formatter = log.Formatter('%(levelname)s: %(name)s: %(message)s')
 
 #________Creating Handler objects__________#
-file_path = r"D:\my_space\software_projects\Python\Learning_curve\Modules\Python Standard Library\logging"
+file_path = __file__.replace('Multilog.py', 'test.log')
 
 # Creating FileHandler, A handler that writes formatted logging records to log files.
-file_handler = log.FileHandler(file_path + r'\test.log')
+file_handler = log.FileHandler(file_path)
 file_handler.setLevel(log.DEBUG)      # setting level for FileHandler.
 file_handler.setFormatter(formatter)
 
@@ -66,4 +66,4 @@ product = multiply(num1, num2)
 logger.error(f"Product of {num1} & {num2} is {product}")           # Printing error log
 
 quotent = divide(num1, num2)
-logger.debug(f"Division of {num1} by {num2} is {quotent}")       # Printing warning log
+logger.debug(f"Division of {num1} by {num2} is {quotent}")         # Printing warning log

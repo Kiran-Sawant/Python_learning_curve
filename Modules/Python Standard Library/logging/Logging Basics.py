@@ -19,8 +19,8 @@ import logging as log
 level: DEBUG, INFO, WARNING, ERROR, CRITICAL
 format: https://docs.python.org/3/library/logging.html#logrecord-attributes"""
 
-file_path = r"D:\my_space\software_projects\Python\Learning_curve\Modules\Python Standard Library\logging"
-log.basicConfig(filename=file_path + r'\test.log', level=log.DEBUG,
+file_path = __file__.replace('Logging Basics.py', 'test.log')
+log.basicConfig(filename=file_path, level=log.DEBUG,
                 format='%(asctime)s:%(levelname)s:%(message)s')        # Setting logging level to DEBUG, globally.
                                                                        # Setting a logging file.
 

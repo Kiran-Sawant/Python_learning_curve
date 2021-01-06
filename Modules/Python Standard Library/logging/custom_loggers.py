@@ -9,9 +9,9 @@ logger.setLevel(log.INFO)
 formatter = log.Formatter('%(levelname)s: %(name)s: %(message)s')
 
 #________Creating a file handler__________#
-file_path = r"D:\my_space\software_projects\Python\Learning_curve\Modules\Python Standard Library\logging"
+file_path = __file__.replace('custom_loggers.py', 'employee.log')
 # A handler class which writes formatted logging records to log files.
-file_handler = log.FileHandler(file_path + r'\employee.log')
+file_handler = log.FileHandler(file_path)
 file_handler.setFormatter(formatter)
 
 # Giving our custom logger a Filehandler object
