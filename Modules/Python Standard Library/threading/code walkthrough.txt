@@ -33,10 +33,10 @@ line-23:
 Creating a Queue object.
 
 line 26~29:
-Creating 10 threads and giving them a target function threader, we set daemon=True for these threads
-There are 2 types of threads, daemonic and non-daemonic. daemonic threads die after the main task is
-complete; non-daemonic do not. If we do not set daemon=True the program will not terminate. line-29
-starts the thread activity.
+Creating 10 threads and giving them a target function threader, we set daemon=True for these threads.
+There are 2 types of threads, Daemonic threads are those which do not stop the Program from exiting.
+Non-Daemons threads are those like the main thread, on whose exit the program is allowed to exit.
+line-29 starts the thread activity.
 
 line 31:
 recording start time.
