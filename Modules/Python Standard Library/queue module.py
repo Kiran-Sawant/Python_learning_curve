@@ -1,7 +1,7 @@
 """The queue module implements multi-producer, multi-consumer queues.
-It is especially useful in threaded programming when information must
-be exchanged safely between multiple threads. The Queue class in this
-module implements all the required locking semantics.
+It is especially useful in Multi-threaded programming when information
+must be exchanged safely between multiple threads. The Queue class in
+this module implements all the required locking semantics.
     The module implements three types of queue, which differ only in
 the order in which the entries are retrieved. In a FIFO queue, the
 first tasks added are the first retrieved. In a LIFO queue, the most
@@ -50,9 +50,9 @@ print(f"Queue Empty: {q.empty()}")
 """As queue module has internal thread-locking mechanisms that
 makes it very useful in Multi-threaded applications that
 may use daemonic threads.
-    .task_done() is placed after the work is done indicaing the
-work is done and then when there are no tasks left the code can
-move beyond .join() method that blocks the code."""
+    .task_done() is placed after the work is done indicating the
+work is done and when there are no tasks left the code can move
+beyond .join() method that blocks the code."""
 q.task_done()
 
 #__________ .join() method____________#
