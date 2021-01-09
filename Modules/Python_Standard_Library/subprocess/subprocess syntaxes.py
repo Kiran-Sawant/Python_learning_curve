@@ -1,15 +1,25 @@
+"""The subprocess module allows you to spawn new processes, connect to
+their input/output/error pipes, and obtain their return codes.
+    Remember you can grab the outputs on the commandline and not the
+outputs of the program itself"""
+
 import subprocess as sub
 
-"""Running the command dir(list all files in directory)
-and storing it in p1."""
-p1 = sub.run('dir', shell=True, capture_output=True, text=True)
+"""Running the command and storing it in p1."""
+path = __file__.replace('subprocess syntaxes.py', 'sys_experiment.py')
+script = "python " + path
 
-# Printing the results
-print(f"stdout: {p1.stdout}")               # returns the output
+p1 = sub.run(script, shell=True, stdout=sub.PIPE)
 
-print(f"stderr: {p1.stderr}")               # returns errors if any
+# print(type(p1))
+
+# Printing the output on commandline.
+print(f"stdout: {p1.stdout}")
+
+print(f"stderr: {p1.stderr}")               # returns error code
 
 print(f"returncode: {p1.returncode}")       # returns an error code
-                                            #0 for no error & 1 for error
+                                            # 0 for no error & 1 for error
 
-# sub.call
+k = eval(p1.stdout)
+print((type(k)))
