@@ -1,4 +1,4 @@
-"""The sys module can be used to access this script externally through the shell.
+""" The sys module can be used to access this script externally through the shell.
 both sys & subprocess modules can be used to communicate between two different
 languages through the shell.
     sys is used to make a script that will recieve commands from the shell.
@@ -6,9 +6,9 @@ languages through the shell.
 
 import sys
 
-# sys.stderr.write("This is how stderr text looks\n")
-# sys.stderr.flush()
-# sys.stdout.write("This is how stdout text looks\n")
+sys.stderr.write("This is how stderr text looks\n")
+sys.stderr.flush()
+sys.stdout.write("This is how stdout text looks\n")
 
 print("sys_module.py executed")
 print(__name__)
@@ -19,6 +19,6 @@ To execute the current script from shell use the following command:
 python sys_module.py "Hello", "Its me"
 here, sys_module.py, "Hello" & "Its me" are arguments."""
 
-# print(f"The first argument is: {sys.argv[0]}")
+print(f"The first argument is: {sys.argv[0]}")
 for i in sys.argv:
     print(i)
