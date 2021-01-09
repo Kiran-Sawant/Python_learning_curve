@@ -5,7 +5,7 @@ One can invoke scripts written in other languages as well in the same way."""
 import subprocess as sub
 
 # setting the path of target script.
-path = __file__.replace('subprocess example.py', 'sys_module.py')
+path = __file__.replace('subprocess example.py', 'sys_expriment.py')
 # setting the script to run.
 script = "python " + path
 
