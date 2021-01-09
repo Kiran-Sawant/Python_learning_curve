@@ -52,3 +52,6 @@ print(sys.version)
 
 #____returns C API version_____#
 print(sys.api_version)
+
+#_____shutsdown the interpreter____#
+sys.exit()
