@@ -26,7 +26,7 @@ file_handler.setFormatter(formatter)
 stream_handler = log.StreamHandler()
 stream_handler.setFormatter(formatter)
 
-# Assigning our custom logger, handler objects.
+# Assigning handler objects to our custom logger.
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
 
