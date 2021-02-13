@@ -1,5 +1,3 @@
-"""https://docs.python.org/3/library/threading.html"""
-
 import threading as thread
 import queue as q
 import time

@@ -1,8 +1,10 @@
+This is a walkthrough of "threading example.py".
+
 line 1:
 importing the threading module
 
 line 2:
-importing queue module, it can be used for multicreative and multi processing tasks.
+importing queue module, it is used for its thread locking mechanism.
 
 line 6:
 Creating a thread lock. often times a program might require multiple threads to access
