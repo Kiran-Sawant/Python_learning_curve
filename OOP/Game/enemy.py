@@ -69,3 +69,5 @@ class VampyreKing(Vampyre):
     # Method overriding
     def take_damage(self, damage):
         super().take_damage(damage // 4)
+        """super() is a proxy method that gives access to super classes methods and attributes.
+        It can be very useful when inheriting from multiple classes."""
