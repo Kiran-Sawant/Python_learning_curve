@@ -1,0 +1,27 @@
+# create a virtual environment.
+python -m venv environ_name
+
+# activate a virtual environment.
+environ_name\Scripts\activate.bat
+
+# deactivating a virtual environment
+deactivate
+
+# removing a virtual environment.
+rmdir environ_name /s       (from root directory.)
+
+# checking location of python interpretors.
+where python
+
+# writing system dependencies to a requirements.txt file.
+pip freeze > requirements.txt
+
+# installing dependencies through a requirements.txt file.
+pip install -r requirements.txt
+
+# creating environment with system packages.
+# system packages are not installed in the environment but are refrenced from global installation.
+python -m venv environ_name --system-site-packages
+
+# listing modules that are specifically installed in the virtual environment.
+pip list --local
