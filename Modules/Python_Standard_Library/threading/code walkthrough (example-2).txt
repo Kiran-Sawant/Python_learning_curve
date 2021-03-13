@@ -34,7 +34,7 @@ therefore the threads are asynchronous and can carryout one state of the operati
 
 # Refer Raymond Hettingers 8 rules for threading also known as raymond rules.
 
-# Rule 1 states that, All shared resources shall run in exactly one thread. In this code block
+# Rule 1 states that, All shared resources shall run in exactly one thread each. In this code block
 we have 2 shared resources, the counter variable and the printing operation. therefore we need these
 operations to run in their own separate threads. So we create two different functions to handle
 these operations. Rule 1 also states that all the communication between these threads shall be
@@ -46,7 +46,7 @@ We create a Atomic Message Queue for carrying out counter operation
 
 line 94~104:
 We separate the operation of incrimenting the counter varibale into a different function to avoid
-ace conditions. 
+race conditions. 
 
 line 106~109:
 We create a daemonic thread, target it to counter_manager. in the counter_manager function we use
@@ -93,11 +93,11 @@ We join print_queue as there should be no tasks left in the print queue by now.
 # Program Flow:-
     The program imports all the modules, creates the counter variable. sets FUZZ variable.
 It creates counter_queue for handeling tasks using counter_manager. It creates a daemonic thread targeted
-to counter_manager and starts it. The daemons don't do anything as counter_queue is empty and .get() method
-locks them on line-99.
+to counter_manager and starts it. The daemon doesn't do anything as counter_queue is empty and .get() method
+locks it on line-99.
 
     The program creates a print_queue for handeling tasks that use print_manager. It creates a daemonic thread
-targeted toward print_manager and starts it. this daemon doesn't do anything either, as the print_queue is empty.
+targeted towards print_manager and starts it. this daemon doesn't do anything either, as the print_queue is empty.
 
     Program puts a task in the print_queue (line-134), daemon in print_manager gets a task, prints the task and passes
 .task_done(). as it is in a while loop; waits for another task at line-118.
@@ -106,7 +106,7 @@ targeted toward print_manager and starts it. this daemon doesn't do anything eit
 targets them towards the worker function, appends them to the list and starts them. These threads are non-daemonic,
 meaning the program won't exit if these threads are not done with their job. Therefore it is recomended to use
 non-daemonic threads for deterministic jobs and daemonic threads for indeterministic or jobs that are carried out
-indefinetly using while loops. It start the threads, they go to worker function and each of them put 1 into counter_queue.
+indefinetly using while loops. It starts the threads, they go to worker function and each of them put 1 into counter_queue.
 now the counter_queue contains 10 instances of int 1. The non-daemonic threads are done with their job and therefore can
 be joined at line 140~141.
 
@@ -135,6 +135,10 @@ are doing. Remember joining on threads will block until threads are done and joi
 
     You should be mindful of all the little operations that can be easily overlooked upon and can create problems such as
 deadlocks or race conditions.
+
+    Make the program in a sequenceial manner test it well and then add threading. Look for race conditions and isolate them
+into different functions. Run these functions on different threads. If these functions have the tendency to run indefinetly
+give their tasks to daemonic threads. pass the tasks through Atomic Message Queues, and join on queues.
 
     Using too many thread locks can make the threading unaffective therefore try to isolate operations and make use of atomic
 message queues insted.
