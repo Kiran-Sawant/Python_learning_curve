@@ -1,0 +1,141 @@
+The Script in example-2 is taken from Raymond Hettingers Keynote at PyCon russia 2016.
+It demonstrates the right way of implimenting Multi-Threading.
+
+line 2~6:
+Importing necessary modules
+
+line 7:
+Declaring a variable on which the operations will be carried out
+
+line 10~16:
+A simple code block to increment the variable and print its value using for loop.
+
+line 19~32:
+The same operation mentioned above but implimented using functions.
+Be carefull while using global variables.
+
+line 35~47:
+The same operation above, but this time we create 10 threads on line-46 and direct 
+them to the worker function. running this code will return a normal output, but there
+are race conditions on lines 40~42 that can cause problems if each of those statements
+takeup variable amount of time to complete. To test these race conditions we add fuzzing.
+
+line 49~57:
+fuzz() is a function that is used to add uncertain amount of load time between statements.
+call this function between the lines of code where you want to test race conditions.
+Eventhough fuzzing can show you presence of problems it cannot guarantee the absence of
+problems. You can still use i to test for race conditions.
+
+line 16~88:
+The same operation as on line 35~47, but with fuzzing added. After running this code we can 
+see that the counter never reaches 10, eventhough we had 10 threads doing the job. The fuzzing
+that we add messes up with our code. Different threads are fuzzed for variable amount of time 
+therefore the threads are asynchronous and can carryout one state of the operation repetedly.
+
+# Refer Raymond Hettingers 8 rules for threading also known as raymond rules.
+
+# Rule 1 states that, All shared resources shall run in exactly one thread. In this code block
+we have 2 shared resources, the counter variable and the printing operation. therefore we need these
+operations to run in their own separate threads. So we create two different functions to handle
+these operations. Rule 1 also states that all the communication between these threads shall be
+done using Atomic Message Queues, Therefore, we create atomic message queues for both these operations
+that will be carried out on separate threads.
+
+line 92:
+We create a Atomic Message Queue for carrying out counter operation
+
+line 94~104:
+We separate the operation of incrimenting the counter varibale into a different function to avoid
+ace conditions. 
+
+line 106~109:
+We create a daemonic thread, target it to counter_manager. in the counter_manager function we use
+the .get() method that implicitly locks the thread until it gets a task. Until then the thread sleeps.
+
+line 113:
+We create a Atomic Message Queue for printing operations:
+
+line 115~121:
+We separate the operation for printing the current value of counter variable into a different function
+to avoid race condition to access the console.
+
+line 123~126:
+We create a daemonic thread, target it to print_manager and start it. In the print manager print_queue
+is empty so the thread sleeps until some task is pushed into the print_queue.
+
+line 130~132:
+We create a worker function that is used to put tasks into counter_queue.
+
+line 134:
+We put a task in the print_queue, the daemon-thread at print_manager gets that task, prints the task.
+
+line 135:
+we create an empty list to store non-daemonic threads.
+
+line 136~141:
+We create 10 threads in loop, target them to worker function, append all the threads to the list and
+start them.
+
+line 140~141:
+We loop over all the threads in the list and join them, ensuring that the program continues after the
+threads are finished with their job. we can join non-daemonic threads directly but not daemonic threads
+we join them on queue insted.
+
+line 143:
+We join counter_queue as there should be no tasks left in the counter queue by now.
+
+line 144:
+We add a last task in the print_queue.
+
+line 145:
+We join print_queue as there should be no tasks left in the print queue by now.
+
+# Program Flow:-
+    The program imports all the modules, creates the counter variable. sets FUZZ variable.
+It creates counter_queue for handeling tasks using counter_manager. It creates a daemonic thread targeted
+to counter_manager and starts it. The daemons don't do anything as counter_queue is empty and .get() method
+locks them on line-99.
+
+    The program creates a print_queue for handeling tasks that use print_manager. It creates a daemonic thread
+targeted toward print_manager and starts it. this daemon doesn't do anything either, as the print_queue is empty.
+
+    Program puts a task in the print_queue (line-134), daemon in print_manager gets a task, prints the task and passes
+.task_done(). as it is in a while loop; waits for another task at line-118.
+
+    The program creates an empty list named 'worker_threads' to store threads (line-135). Creates 10 non-daemonic threads
+targets them towards the worker function, appends them to the list and starts them. These threads are non-daemonic,
+meaning the program won't exit if these threads are not done with their job. Therefore it is recomended to use
+non-daemonic threads for deterministic jobs and daemonic threads for indeterministic or jobs that are carried out
+indefinetly using while loops. It start the threads, they go to worker function and each of them put 1 into counter_queue.
+now the counter_queue contains 10 instances of int 1. The non-daemonic threads are done with their job and therefore can
+be joined at line 140~141.
+
+    The daemon sleeping in counter_manager gets a task, it stores the task in 'incriment' variable adds the counter by the
+incriment, puts a task in the print_queue and marks the task_done(). It does this operation for every task in counter_queue.
+
+    For every loop in the counter_manager, print_queue gets a task. The daemon sleeping in the print_manager gets that task
+prints the line and marks the task done. Both the daemons run concurrently and independently as the communication between them
+is carried out through print_queue. The daemon in print_manager is not dependent on the counter_manager to return something
+rather it just reads the contents in the print_queue, so both can run independently.
+
+    The program follows raymond rule as there is just one thread for each function and the threads comunicate using Queues.
+The 10 non-daemonic threads had a very deterministic task and were joined on thread. We use daemonic or non-daemonic threads
+to do tasks, the problem with non-daemonic threads is that we might not know if those threads are done with their jobs.
+Therefore, it is adviced to use atomic message queues while using daemonic threads and pass them tasks through this queue
+and .join the queue rather than the thread. join's function is to block the program at that point until the started threads are
+done with their jobs, therefore you can .join non-daemonic threads directly as on line-141 but not daemonic threads, insted .join
+on queues so that the program will move beyond that point if the queue is empty (line 143-145) regardless of what the daemons
+are doing. Remember joining on threads will block until threads are done and joining on queues will block until the queue is empty
+
+# Notes:-
+
+    The code runs the same way with fuzzing added.
+
+    While creating multithreaded programs the structuring of the code is the most important thing to keep in mind.
+
+    You should be mindful of all the little operations that can be easily overlooked upon and can create problems such as
+deadlocks or race conditions.
+
+    Using too many thread locks can make the threading unaffective therefore try to isolate operations and make use of atomic
+message queues insted.
+
