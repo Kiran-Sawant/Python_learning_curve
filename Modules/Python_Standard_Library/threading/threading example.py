@@ -19,7 +19,7 @@ def threader():
         exampleJob(work)
         que.task_done()
 
-# Creating a Queue DataStructure
+# Creating a Queue DataStructure Atomic Message Queue
 que = q.Queue()
 
 # creating 10 threads
