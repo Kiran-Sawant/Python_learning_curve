@@ -86,8 +86,8 @@ for i in range(10):
     fuzz()
 print('Finishing up')
 fuzz()
-"""
 
+"""
 #______________Threading the right Way________________#
 counter_queue = queue.Queue()
 
@@ -97,14 +97,17 @@ def counter_manager():
 
     while True:
         increment = counter_queue.get()
+        fuzz()
         counter += increment
         print_queue.put([
             f'The count is {counter}',
             '---------------'])
+        fuzz()
         counter_queue.task_done()
 
 t = threading.Thread(target=counter_manager)
 t.daemon = True
+fuzz()
 t.start()
 # del t
 
@@ -115,13 +118,16 @@ print_queue = queue.Queue()
 def print_manager():
     'I have EXCLUSIVE rights to call the "print" keyword'
     while True:
+        fuzz()
         job = print_queue.get()
         for line in job:
             print(line)
+            fuzz()
         print_queue.task_done()
 
 t2 = threading.Thread(target=print_manager)
 t2.daemon = True
+fuzz()
 t2.start()
 # del t
 
@@ -130,15 +136,18 @@ t2.start()
 def worker():
     'My job is to increment the counter and print the current count'
     counter_queue.put(1)
+    fuzz()
 
 print_queue.put(['Starting up'])
 worker_threads = []
 for i in range(10):
     t = threading.Thread(target=worker)     # Creating 10 non-daemonic threads
     worker_threads.append(t)
+    fuzz()
     t.start()
 for t in worker_threads:
     t.join()                                # joining non-daemonic threads
+    fuzz()
 
 counter_queue.join()
 print_queue.put(['Finishing up'])
