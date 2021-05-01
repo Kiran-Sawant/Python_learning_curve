@@ -34,6 +34,7 @@ if __name__ == "__main__":
 
     # recreate_databases()
 
+    # Creating a Book instance
     book1 = Book(
         title='Deep Learning',
         author='Ian GoodFellow',
@@ -41,6 +42,6 @@ if __name__ == "__main__":
         published=dt.date(2016, 11, 18)
     )
 
-    session1.add(book1)
-    session1.commit()
-    session1.close()
+    session1.add(book1)     # adding that instance to session.
+    session1.commit()       # commiting changes made to session to database.
+    session1.close()        # closing the session
