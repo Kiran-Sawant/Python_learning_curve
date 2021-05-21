@@ -1,0 +1,18 @@
+# Start a scrapy shell on the passed URL
+>>>scrapy shell "URL"
+
+# get a scrapy HtmlResponse object for that URL
+>>>print(respone)
+
+# Print html of that URL
+>>>print(response.text)
+
+# Selecting elements with CSS selector, returns a selector object
+>>>response.css(css_selector:str)
+
+# Selecting elements with CSS selector, returns a single HTML element
+>>>response.css(css_selector:str).get()
+>>>response.css(".text::text").get()
+
+# Selecting elements with CSS selector, returns a list of HTML elements
+>>>response.css(css_selector:str).getall()
