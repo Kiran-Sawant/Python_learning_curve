@@ -1,0 +1,32 @@
+[
+    {
+        "1.0": "History",
+        "2.0": "Design philosophy and features",
+        "3.0": "Syntax and semantics",
+        "3.1": "Indentation",
+        "3.2": "Statements and control flow",
+        "3.3": "Expressions",
+        "3.4": "Methods",
+        "3.5": "Typing",
+        "3.6": "Arithmetic operations",
+        "4.0": "Programming examples",
+        "5.0": "Libraries",
+        "6.0": "Development environments",
+        "7.0": "Implementations",
+        "7.1": "Reference implementation",
+        "7.2": "Other implementations",
+        "7.3": "Unsupported implementations",
+        "7.4": "Cross-compilers to other languages",
+        "7.5": "Performance",
+        "8.0": "Development",
+        "9.0": "API documentation generators",
+        "10.0": "Naming",
+        "11.0": "Uses",
+        "12.0": "Languages influenced by Python",
+        "13.0": "See also",
+        "14.0": "References",
+        "14.1": "Sources",
+        "15.0": "Further reading",
+        "16.0": "External links"
+    }
+]
