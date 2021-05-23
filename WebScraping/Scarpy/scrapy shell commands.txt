@@ -10,9 +10,23 @@
 # Selecting elements with CSS selector, returns a selector object
 >>>response.css(css_selector:str)
 
-# Selecting elements with CSS selector, returns a single HTML element
+# Selecting elements with CSS selector, returns a single HTML element.
 >>>response.css(css_selector:str).get()
 >>>response.css(".text::text").get()
 
-# Selecting elements with CSS selector, returns a list of HTML elements
+# Selecting elements with CSS selector, returns a list of HTML elements.
 >>>response.css(css_selector:str).getall()
+
+# Starting a spider.
+>>>scrapy genspider spider_name start_url
+
+# running the spider.
+>>>scrapy runspider spider_name.py
+
+# running spider and saving output to a JSON file.
+# The spider must yield a Dictionary
+>>>scrapy runspider spider_name.py -o filename.json
+
+# grabing new URL in an active shell
+>>>fetch("new_url")
+>>>fetch("https://en.wikipedia.org/wiki/Python_(programming_language)")
