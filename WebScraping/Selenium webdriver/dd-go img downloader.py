@@ -1,7 +1,7 @@
 #%%
 """
 This module opens chrome browser visit duckduckgo.com and searches for 
-SpongeBob Square pants (line-20), navigates to images tab, and downloads
+SpongeBob Square pants (line-24), navigates to images tab, and downloads
 images that appear first, without scroll auto load (100 approx)."""
 
 import time
