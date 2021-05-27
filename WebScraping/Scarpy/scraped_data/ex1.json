@@ -1,0 +1,77 @@
+[
+    {
+        "heading": "IMPORTANT!",
+        "paragraph": "This blog is only for practicing learning. The contents may change but CSS selectors would contibue to work.",
+        "author": "Upendra",
+        "date": "November 28, 2019",
+        "tags": [],
+        "category": [
+            "Python",
+            "Web Scraping"
+        ]
+    },
+    {
+        "heading": "Part 2 of BS4 Selenium,\u00a0Scrapy",
+        "paragraph": "This is part 2 of the dummy post. This post is just a copy of BeautifulSoup, Selenium, Scrapy published earlier. ",
+        "author": "Upendra",
+        "date": "December 17, 2019",
+        "tags": [
+            "Python",
+            "Scrapy"
+        ],
+        "category": [
+            "Web Scraping"
+        ]
+    },
+    {
+        "heading": "Introduce Yourself",
+        "paragraph": "This example post is a copy of Introduce Yourself, originally published as part of Blogging University. Enroll in one of our ten programs, and start your blog right.",
+        "author": "Upendra",
+        "date": "December 17, 2019",
+        "tags": [],
+        "category": [
+            "Uncategorized"
+        ]
+    },
+    {
+        "heading": "Part 3 of Scrapy and\u00a0JSON",
+        "paragraph": "This blog is nothing but a copy of Scrapy and\u00a0JSON. All the content is a dummy and for practice only.",
+        "author": "Upendra",
+        "date": "December 17, 2019",
+        "tags": [
+            "Code",
+            "Python"
+        ],
+        "category": [
+            "Python"
+        ]
+    },
+    {
+        "heading": "Part 1 of Scrapy and\u00a0JSON",
+        "paragraph": "How easy is it to get JSON data with Scrapy? This is one more dummy post for practice.",
+        "author": "Upendra",
+        "date": "December 14, 2019",
+        "tags": [
+            "Code",
+            "Python"
+        ],
+        "category": [
+            "Python"
+        ]
+    },
+    {
+        "heading": "Send Mail using\u00a0Python",
+        "paragraph": "Securely send mail from code: Sending mail with Python is very easy. just a few lines of code. But what that password that you are writing in your source code?",
+        "author": "Upendra",
+        "date": "December 14, 2019",
+        "tags": [
+            "Code",
+            "mail",
+            "Python"
+        ],
+        "category": [
+            "Python",
+            "Web Scraping"
+        ]
+    }
+]
