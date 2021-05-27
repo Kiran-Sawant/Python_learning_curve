@@ -7,9 +7,11 @@ class ParisSpider(scrapy.Spider):
     start_urls = ['https://en.wikipedia.org/wiki/Eiffel_Tower']
 
     def parse(self, response):
-        raw_img_urls = response.css(".image img::attr(src)").getall()
-        clean_img_urls  = []
+        raw_img_urls = response.css(".image img::attr(src)").getall()   # relative URLs
+        clean_img_urls  = []                                            # absolute URLs
 
+        '''response.urljoin(r_url) returns an absolute URL, 
+        based on the URL to which the request was sent.'''
         for img_url in raw_img_urls:
             clean_img_urls.append(response.urljoin(img_url))
 
