@@ -1,32 +1,51 @@
 # Start a scrapy shell on the passed URL
->>>scrapy shell "URL"
+>>> scrapy shell "URL"
 
 # get a scrapy HtmlResponse object for that URL
->>>print(respone)
+>>> print(respone)
 
 # Print html of that URL
->>>print(response.text)
+>>> print(response.text)
 
 # Selecting elements with CSS selector, returns a selector object
->>>response.css(css_selector:str)
+>>> response.css(css_selector:str)
 
 # Selecting elements with CSS selector, returns a single HTML element.
->>>response.css(css_selector:str).get()
->>>response.css(".text::text").get()
+>>> response.css(css_selector:str).get()
+>>> response.css(".text::text").get()
 
 # Selecting elements with CSS selector, returns a list of HTML elements.
->>>response.css(css_selector:str).getall()
+>>> response.css(css_selector:str).getall()
 
-# Starting a spider.
->>>scrapy genspider spider_name start_url
+# Creating a spider.
+>>> scrapy genspider spider_name start_url
+
+# Creating a spider with a template.
+# -t for inserting a template argument, and crawl for crawl-spider.
+>>> scrapy genspider -t crawl spider_name url
+>>> scrapy genspider -t crawl h1_spider url
+
+# list all available templates for spiders
+>>> scrapy genspider -l
 
 # running the spider.
->>>scrapy runspider spider_name.py
+>>> scrapy runspider spider_name.py
 
 # running spider and saving output to a JSON file.
 # The spider must yield a Dictionary
->>>scrapy runspider spider_name.py -o filename.json
+>>> scrapy runspider spider_name.py -o filename.json
 
 # grabing new URL in an active shell
->>>fetch("new_url")
->>>fetch("https://en.wikipedia.org/wiki/Python_(programming_language)")
+>>> fetch("new_url")
+>>> fetch("https://en.wikipedia.org/wiki/Python_(programming_language)")
+
+# Setting up Log levels. anything below the mentioned log-level will not be printed.
+>>> scrapy runspider spidername.py -L LOGLEVEL
+>>> scrapy runspider infiscroll.py -L WARNING
+
+# Starting a Scrapy project.
+>>> scrapy startproject project_name project_dir
+
+# running a spider in a scrapy project.
+# run from project directory, where .cfg file exists
+>>> scrapy crawl spider_name
