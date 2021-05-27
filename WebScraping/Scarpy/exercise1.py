@@ -1,3 +1,5 @@
+"""Scraping multiple items from a list-view."""
+
 import scrapy
 from bs4 import BeautifulSoup
 
