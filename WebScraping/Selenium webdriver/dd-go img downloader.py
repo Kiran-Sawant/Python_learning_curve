@@ -65,14 +65,14 @@ for tile in image_tiles:
     if file_path.exists():                                          # if the file is already saved (based on file name)
         continue
 
-    with requests.get(og_img_src, stream=True) as r:                # sending a request to original image link
+    with requests.get(og_img_src, stream=True) as response:         # sending a request to original image link
         try:
-            r.raise_for_status()
+            response.raise_for_status()                             # raise a status error if any
         except:
             pass
 
         with open(file_path, mode='wb') as file_:
-            for chunk in r.iter_content(chunk_size=8000):
+            for chunk in response.iter_content(chunk_size=8000):
                 file_.write(chunk)                                  # saving the image downloaded from request
 
 # %%
