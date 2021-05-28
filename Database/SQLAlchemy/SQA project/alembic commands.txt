@@ -1,0 +1,16 @@
+# initializing alembic in root directory
+alembic init alembic
+
+# add database connection string in the alembic.ini to sqlalchemy.url variable (not as string)
+
+# import the instance of declarative Base created in the models file into env.py inside alembic 
+directory and assign the metadata of that base to target_metadata variable in a list.
+
+# Registering database and models to alembic
+alembic stamp head
+
+# Generate a migration script, which contains details on how to upgrade or downgrade database
+alembic revision --autogenerate -m "comment on changes that were made"
+
+# Performing the migration
+alembic upgrade head
