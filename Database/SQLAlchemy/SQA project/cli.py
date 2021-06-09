@@ -1,3 +1,5 @@
+"""A Script to add price value to price column in book table"""
+
 from crud import engine
 from models import Book
 from sqlalchemy.orm.session import sessionmaker
